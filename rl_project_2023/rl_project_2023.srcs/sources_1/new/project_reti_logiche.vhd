@@ -33,6 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity project_reti_logiche is
 
+    -- Ports of the circuit
     port(
         i_clk : in std_logic;
         i_rst : in std_logic;
@@ -54,6 +55,58 @@ entity project_reti_logiche is
 end project_reti_logiche;
 
 architecture project_reti_logiche_arch of project_reti_logiche is
+
+    -- Internal signals of the circuit
+    signal select_register : std_logic;
+    signal set_registers : std_logic;
+    signal reset_registers : std_logic;
+    -- FSM states
+    
+    -- Definitions of all the components
+    
+    -- One bit demultiplexer, used to divide the input in output selection and memory address
+    component one_bit_demux is
+        port(
+            input : in std_logic;
+            sel : in std_logic;
+            out_1 : out std_logic;
+            out_2 : out std_logic 
+        );
+    end component;
+    
+    -- Two bit demultiplexer, 8-bit input/output, used to choose where to send memory data
+    component two_bit_demux is
+        port(
+            input : in std_logic_vector(7 downto 0);
+            sel : in std_logic_vector(1 downto 0);
+            out_1 : out std_logic_vector(7 downto 0);
+            out_2 : out std_logic_vector(7 downto 0);
+            out_3 : out std_logic_vector(7 downto 0);
+            out_4 : out std_logic_vector(7 downto 0)
+        );
+    end component;
+    
+    -- Two bit shift register, used to store the output selection index
+    component two_bit_sreg is
+        port(
+            input : in std_logic;
+            set : in std_logic;
+            reset : in std_logic;
+            output : out std_logic_vector(1 downto 0)
+        );
+    end component;
+    
+    -- 16 bit shift register, used to store the 16-bit memory address
+    component address_register is
+        port(
+            input : in std_logic;
+            set : in std_logic;
+            reset : in std_logic;
+            output : out std_logic_vector(15 downto 0)
+        );
+    end component;
+    
+    -- 8 bit register, used to store the value of one of the circuit's output
 
 begin
 

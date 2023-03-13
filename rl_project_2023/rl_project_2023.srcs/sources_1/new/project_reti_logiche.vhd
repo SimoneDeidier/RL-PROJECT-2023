@@ -60,6 +60,8 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     signal select_register : std_logic;
     signal set_registers : std_logic;
     signal reset_registers : std_logic;
+    signal input_address_sreg : std_logic;
+    signal input_two_bit_sreg : std_logic;
     -- FSM states
     
     -- Definitions of all the components
@@ -69,20 +71,20 @@ architecture project_reti_logiche_arch of project_reti_logiche is
         port(
             input : in std_logic;
             sel : in std_logic;
-            out_1 : out std_logic;
-            out_2 : out std_logic 
+            out_0 : out std_logic;
+            out_1 : out std_logic 
         );
     end component;
     
-    -- Two bit demultiplexer, 8-bit input/output, used to choose where to send memory data
+    -- Two bit demultiplexer, 8-bit input, 9-bit output (8-bit data + 1-bit set signal), used to choose where to send memory data
     component two_bit_demux is
         port(
             input : in std_logic_vector(7 downto 0);
             sel : in std_logic_vector(1 downto 0);
-            out_1 : out std_logic_vector(7 downto 0);
-            out_2 : out std_logic_vector(7 downto 0);
-            out_3 : out std_logic_vector(7 downto 0);
-            out_4 : out std_logic_vector(7 downto 0)
+            out_0 : out std_logic_vector(8 downto 0);
+            out_1 : out std_logic_vector(8 downto 0);
+            out_2 : out std_logic_vector(8 downto 0);
+            out_3 : out std_logic_vector(8 downto 0)
         );
     end component;
     
@@ -107,7 +109,25 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     end component;
     
     -- 8 bit register, used to store the value of one of the circuit's output
+    component output_register is
+        port(
+            input_data : in std_logic_vector(7 downto 0);
+            set : in std_logic;
+            reset : in std_logic;
+            show_output : in std_logic;
+            output : out std_logic_vector(7 downto 0)
+        );
+    end component;
 
 begin
+
+    -- Mapping ports of external components
+    
+    mux1 : one_bit_demux port map(
+        input => i_w,
+        sel => select_register,
+        out_0 => input_two_bit_sreg,
+        out_1 => input_address_sreg
+    );
 
 end project_reti_logiche_arch;

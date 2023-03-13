@@ -2,9 +2,9 @@
 -- Company: Politecnico di Milano
 -- Engineer: D'Alessio Edoardo, Deidier Simone
 -- 
--- Create Date: 03/13/2023 07:57:17 PM
+-- Create Date: 03/13/2023 11:20:39 PM
 -- Design Name: 
--- Module Name: one_bit_demux - Behavioral
+-- Module Name: two_bit_sreg - two_bit_sreg_arch
 -- Project Name: Progetto (Prova Finale) Reti Logiche AA 2022/23
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,32 +31,32 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity one_bit_demux is
+entity two_bit_sreg is
     port(
-            input : in std_logic;
-            sel : in std_logic;
-            out_0 : out std_logic;
-            out_1 : out std_logic 
-        );
-end one_bit_demux;
+        input : in std_logic;
+        set : in std_logic;
+        reset : in std_logic;
+        clock : in std_logic;
+        output : out std_logic_vector(1 downto 0)
+    );
+end two_bit_sreg;
 
-architecture one_bit_demux_arch of one_bit_demux is
+architecture two_bit_sreg_arch of two_bit_sreg is
+
+    signal data : std_logic_vector(1 downto 0);
 
 begin
 
-    one_bit_demux_proc : process(input, sel)
+    two_bit_sreg_proc : process(input, set, reset, clock)
     begin
-        case sel is
-            when '0' =>
-                out_0 <= input;
-                out_1 <= '0';
-            when '1' =>
-                out_0 <= '0';
-                out_1 <= input;
-            when others =>
-                out_0 <= 'X';
-                out_1 <= 'X';
-        end case;
+        if reset = '1' then
+            data <= "00";
+            output <= data;
+        elsif clock'event and clock = '1' and set = '1' then
+            data(1) <= data(0);
+            data(0) <= input;
+            output <= data;
+        end if;
     end process;
 
-end one_bit_demux_arch;
+end two_bit_sreg_arch;

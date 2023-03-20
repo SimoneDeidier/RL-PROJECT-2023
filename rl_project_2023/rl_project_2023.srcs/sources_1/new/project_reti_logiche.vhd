@@ -58,7 +58,6 @@ architecture project_reti_logiche_arch of project_reti_logiche is
 
     -- Internal signals of the circuit
     signal select_register : std_logic;
-    signal set_registers : std_logic;
     signal reset_registers : std_logic;
     signal input_address_sreg : std_logic;
     signal input_two_bit_sreg : std_logic;
@@ -71,6 +70,10 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     signal z_1_set_reg : std_logic;
     signal z_2_set_reg : std_logic;
     signal z_3_set_reg : std_logic;
+    signal two_bit_sreg_set : std_logic;
+    signal set_addr_reg : std_logic;
+    signal shift_addr_reg : std_logic;
+
     -- FSM states
     
     -- Definitions of all the components
@@ -118,6 +121,8 @@ architecture project_reti_logiche_arch of project_reti_logiche is
             input : in std_logic;
             set : in std_logic;
             reset : in std_logic;
+            shift : in std_logic;
+            clock : in std_logic;
             output : out std_logic_vector(15 downto 0)
         );
     end component;
@@ -128,6 +133,7 @@ architecture project_reti_logiche_arch of project_reti_logiche is
             input_data : in std_logic_vector(7 downto 0);
             set : in std_logic;
             reset : in std_logic;
+            clock : in std_logic;
             show_output : in std_logic;
             output : out std_logic_vector(7 downto 0)
         );
@@ -157,6 +163,24 @@ begin
         set_1 => z_1_set_reg,
         set_2 => z_2_set_reg,
         set_3 => z_3_set_reg
+    );
+
+    -- Shift register to store the value of the ouput channel
+    out_sreg : two_bit_sreg port map(
+        input => input_two_bit_sreg.
+        set => two_bit_sreg_set,
+        reset => reset_registers,
+        clock => i_clk,
+        output => two_bit_sreg_output
+    );
+
+    address_reg : address_register port map(
+        input => input_address_sreg,
+        set => set_addr_reg,
+        reset => reset_registers,
+        shift => shift_addr_reg,
+        clock => i_clk,
+        output => o_mem_addr
     );
 
 end project_reti_logiche_arch;

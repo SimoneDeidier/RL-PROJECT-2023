@@ -1,0 +1,11 @@
+# Local project files
+project_1/
+
+# Cache files
+rl_project_2023/rl_project_2023.cache/
+
+# Jou files
+*.jou
+
+# Log files
+*.log

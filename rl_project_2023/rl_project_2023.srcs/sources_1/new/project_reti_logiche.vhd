@@ -76,7 +76,21 @@ architecture project_reti_logiche_arch of project_reti_logiche is
 
     -- FSM states
     
+    
+    
+    
     -- Definitions of all the components
+    
+    -- counter: it counts 2 clocks events and START; it controls when to switch "select_register"
+    component counter is
+        port(
+            input : in std_logic; 
+            overflow : out std_logic
+        );
+        end component;
+    
+    
+    
     
     -- One bit demultiplexer, used to divide the input in output selection and memory address
     component one_bit_demux is
@@ -167,7 +181,7 @@ begin
 
     -- Shift register to store the value of the ouput channel
     out_sreg : two_bit_sreg port map(
-        input => input_two_bit_sreg.
+        input => input_two_bit_sreg,
         set => two_bit_sreg_set,
         reset => reset_registers,
         clock => i_clk,
@@ -181,6 +195,40 @@ begin
         shift => shift_addr_reg,
         clock => i_clk,
         output => o_mem_addr
+    );
+    
+    z_0_output_register : output_register port map(
+        input_data => z_0_input_reg,
+        set => z_0_set_reg,
+        reset => reset_registers,
+        clock => i_clk ,
+        show_output => done,
+        output => o_z0
+    );
+    
+     z_1_output_register : output_register port map(
+        input_data => z_1_input_reg,
+        set => z_1_set_reg,
+        reset => reset_registers,
+        clock => i_clk ,
+        show_output => done,
+        output => o_z1
+    );
+     z_2_output_register : output_register port map(
+        input_data => z_2_input_reg,
+        set => z_2_set_reg,
+        reset => reset_registers,
+        clock => i_clk ,
+        show_output => done,
+        output => o_z2
+    );
+     z_3_output_register : output_register port map(
+        input_data => z_3_input_reg,
+        set => z_3_set_reg,
+        reset => reset_registers,
+        clock => i_clk ,
+        show_output => done,
+        output => o_z3
     );
 
 end project_reti_logiche_arch;

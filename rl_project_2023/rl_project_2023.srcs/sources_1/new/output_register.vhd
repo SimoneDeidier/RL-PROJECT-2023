@@ -54,12 +54,17 @@ begin
             data <= "00000000";
             output <= data;
         elsif clock'event and clock = '1' and set = '1' then
-
+            data <= input_data;
         end if;
     end process;
 
     output_register_proc : process(show_output)
     begin
+        if clock'event and clock = '1' and show_output = '1' then
+            output <= data;
+        elsif clock'event and clock = '1' and show_output = '0' then
+            output <= "00000000";
+        end if;
     end process;
 
 end output_register_arch;

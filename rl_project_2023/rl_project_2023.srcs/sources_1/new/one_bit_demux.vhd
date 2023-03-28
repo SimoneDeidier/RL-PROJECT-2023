@@ -36,7 +36,7 @@ entity one_bit_demux is
             input : in std_logic;
             sel : in std_logic;
             out_0 : out std_logic;
-            out_1 : out std_logic 
+            out_1 : out std_logic
         );
 end one_bit_demux;
 

@@ -76,7 +76,12 @@ architecture project_reti_logiche_arch of project_reti_logiche is
 
     -- FSM states
     
-    
+    component fsm is
+        port(
+            clock, start, reset:  in std_logic;
+            mem_we, mem_en, done, reset_reg, select_register: out std_logic
+        );
+    end component;
     
     
     -- Definitions of all the components
@@ -84,21 +89,22 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     -- counter: it counts 2 clocks events and START; it controls when to switch "select_register"
     component counter is
         port(
-            input : in std_logic; 
-            overflow : out std_logic
+            clock: in std_logic;
+            reset: in std_logic;
+            output : out std_logic_vector(1 downto 0)
         );
         end component;
     
     
     
     
-    -- One bit demultiplexer, used to divide the input in output selection and memory address
+    -- One bit demultiplexer, 1-bit input, 2 bit output, used to divide the input in output selection and memory address 
     component one_bit_demux is
         port(
             input : in std_logic;
             sel : in std_logic;
             out_0 : out std_logic;
-            out_1 : out std_logic 
+            out_1 : out std_logic
         );
     end component;
     

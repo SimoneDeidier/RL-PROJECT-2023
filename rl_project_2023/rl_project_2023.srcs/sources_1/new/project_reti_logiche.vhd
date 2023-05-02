@@ -73,7 +73,8 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     signal two_bit_sreg_set : std_logic;
     signal set_addr_reg : std_logic;
     signal shift_addr_reg : std_logic;
-
+    signal show_output : std_logic;
+    
     -- FSM states
     
     component fsm is
@@ -194,6 +195,7 @@ begin
         output => two_bit_sreg_output
     );
 
+    -- Shift register to store the addres of the memory
     address_reg : address_register port map(
         input => input_address_sreg,
         set => set_addr_reg,
@@ -203,38 +205,57 @@ begin
         output => o_mem_addr
     );
     
+    -- Register for first out line
     z_0_output_register : output_register port map(
         input_data => z_0_input_reg,
         set => z_0_set_reg,
         reset => reset_registers,
         clock => i_clk ,
-        show_output => done,
+        show_output => show_output,
         output => o_z0
     );
     
-     z_1_output_register : output_register port map(
+    -- Register for second out line
+    z_1_output_register : output_register port map(
         input_data => z_1_input_reg,
         set => z_1_set_reg,
         reset => reset_registers,
         clock => i_clk ,
-        show_output => done,
+        show_output => show_output,
         output => o_z1
     );
-     z_2_output_register : output_register port map(
+    
+    -- Register for third out line
+    z_2_output_register : output_register port map(
         input_data => z_2_input_reg,
         set => z_2_set_reg,
         reset => reset_registers,
         clock => i_clk ,
-        show_output => done,
+        show_output => show_output,
         output => o_z2
     );
-     z_3_output_register : output_register port map(
+    
+    -- Register for fourth out line
+    z_3_output_register : output_register port map(
         input_data => z_3_input_reg,
         set => z_3_set_reg,
         reset => reset_registers,
         clock => i_clk ,
-        show_output => done,
+        show_output => show_output,
         output => o_z3
+    );
+    
+    -- Finite State Machine
+    finite_state_machine: fsm port map(
+        clock => i_clk,
+        start => i_start,
+        reset => i_rst,
+        mem_we => o_mem_we,
+        mem_en => o_mem_en,
+        done => show_output,
+        reset_reg => reset_registers,
+        select_register => select_register,
+        set => set_addr_reg
     );
 
 end project_reti_logiche_arch;

@@ -58,10 +58,11 @@ architecture project_reti_logiche_arch of project_reti_logiche is
 
     -- Internal signals of the circuit
     signal select_register : std_logic;
-    signal reset_registers : std_logic;
+    signal reset_all_regs : std_logic;
+    signal rst_addr : std_logic;
     signal input_address_sreg : std_logic;
     signal input_two_bit_sreg : std_logic;
-    signal two_bit_sreg_output : std_logic_vector(1 downto 0);
+    signal out_two_bit_sreg : std_logic_vector(1 downto 0);
     signal z_0_input_reg : std_logic_vector(7 downto 0);
     signal z_1_input_reg : std_logic_vector(7 downto 0);
     signal z_2_input_reg : std_logic_vector(7 downto 0);
@@ -70,7 +71,7 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     signal z_1_set_reg : std_logic;
     signal z_2_set_reg : std_logic;
     signal z_3_set_reg : std_logic;
-    signal two_bit_sreg_set : std_logic;
+    signal set_two_bit_reg : std_logic;
     signal set_addr_reg : std_logic;
     signal shift_addr_reg : std_logic;
     signal show_output : std_logic;
@@ -80,7 +81,7 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     component fsm is
         port(
             clock, start, reset:  in std_logic;
-            mem_we, mem_en, done, reset_reg, select_register: out std_logic
+            mem_we, mem_en, done, reset_all_regs, select_register,  show_output_reg, rst_addr, set_addr, set_two_bit: out std_logic
         );
     end component;
     
@@ -142,6 +143,7 @@ architecture project_reti_logiche_arch of project_reti_logiche is
             input : in std_logic;
             set : in std_logic;
             reset : in std_logic;
+            reset_addr : in std_logic;
             shift : in std_logic;
             clock : in std_logic;
             output : out std_logic_vector(15 downto 0)
@@ -175,7 +177,7 @@ begin
     -- Demux to select in which output we want to set a new value
     demux2 : two_bit_demux port map(
         input => i_mem_data,
-        sel => two_bit_sreg_output,
+        sel => out_two_bit_sreg,
         out_0 => z_0_input_reg,
         out_1 => z_1_input_reg,
         out_2 => z_2_input_reg,
@@ -189,17 +191,18 @@ begin
     -- Shift register to store the value of the ouput channel
     out_sreg : two_bit_sreg port map(
         input => input_two_bit_sreg,
-        set => two_bit_sreg_set,
-        reset => reset_registers,
+        set => set_two_bit_reg,
+        reset => reset_all_regs,
         clock => i_clk,
-        output => two_bit_sreg_output
+        output => out_two_bit_sreg
     );
 
     -- Shift register to store the addres of the memory
     address_reg : address_register port map(
         input => input_address_sreg,
         set => set_addr_reg,
-        reset => reset_registers,
+        reset => reset_all_regs,
+        reset_addr => rst_addr,
         shift => shift_addr_reg,
         clock => i_clk,
         output => o_mem_addr
@@ -209,7 +212,7 @@ begin
     z_0_output_register : output_register port map(
         input_data => z_0_input_reg,
         set => z_0_set_reg,
-        reset => reset_registers,
+        reset => reset_all_regs,
         clock => i_clk ,
         show_output => show_output,
         output => o_z0
@@ -219,7 +222,7 @@ begin
     z_1_output_register : output_register port map(
         input_data => z_1_input_reg,
         set => z_1_set_reg,
-        reset => reset_registers,
+        reset => reset_all_regs,
         clock => i_clk ,
         show_output => show_output,
         output => o_z1
@@ -229,7 +232,7 @@ begin
     z_2_output_register : output_register port map(
         input_data => z_2_input_reg,
         set => z_2_set_reg,
-        reset => reset_registers,
+        reset => reset_all_regs,
         clock => i_clk ,
         show_output => show_output,
         output => o_z2
@@ -239,7 +242,7 @@ begin
     z_3_output_register : output_register port map(
         input_data => z_3_input_reg,
         set => z_3_set_reg,
-        reset => reset_registers,
+        reset => reset_all_regs,
         clock => i_clk ,
         show_output => show_output,
         output => o_z3
@@ -252,10 +255,13 @@ begin
         reset => i_rst,
         mem_we => o_mem_we,
         mem_en => o_mem_en,
-        done => show_output,
-        reset_reg => reset_registers,
+        done => o_done,
+        show_output_reg => show_output,
+        reset_all_regs => reset_all_regs,
+        rst_addr => rst_addr,
         select_register => select_register,
-        set => set_addr_reg
+        set_addr => set_addr_reg,
+        set_two_bit => set_two_bit_reg
     );
 
 end project_reti_logiche_arch;

@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: D'Alessio Edoardo, Deider Simone
 -- 
 -- Create Date: 03/27/2023 05:27:04 PM
 -- Design Name: 
@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity fsm is
     port(
             clock, start, reset:  in std_logic;
-            mem_we, mem_en, done, reset_reg, select_register, set: out std_logic
+            mem_we, mem_en, done, reset_all_regs, select_register,  show_output_reg, rst_addr, set_addr, set_two_bit: out std_logic
         );
 end fsm;
 
@@ -97,37 +97,43 @@ architecture fsm_arch of fsm is
     begin
         mem_we <= '0';
         mem_en <= '0';
-        select_register <= '0';
         done <= '0';
-        reset_reg <= '0';
-        select_register<= '0'; 
-        set <= '0';
-        
+        reset_all_regs <= '0';
+        select_register <= '0';
+        show_output_reg <= '0';
+        rst_addr <= '0';
+        set_addr <= '0';
+        set_two_bit <= '1';       
         
         
         case curr_state is
             when S_RESET =>
-                reset_reg <= '1';
+                reset_all_regs <= '1';
             when S_WAIT =>
-                reset_reg <= '0';
+                reset_all_regs <= '0';
+                rst_addr <= '0';
                 done <= '0';
-                select_register<= '0'; 
+                select_register<= '0';
+                show_output_reg <= '0';
             when SELECT_OUTPUT_LINE =>
-                set <= '1';
+                set_two_bit <= '1';
             when TAKE_MEM_ADDR =>
                 select_register<= '1'; 
+                set_two_bit <= '0';
+                set_addr <= '1';
             when MEM =>
-                set <= '0';
+                set_addr <= '0';
                 mem_en <= '1';
             when S_DONE =>
+                rst_addr <= '1';
+                set_two_bit <= '1';
+                select_register <= '0';
+                show_output_reg <= '1';
                 done <= '1';
                 mem_en <= '0';
         end case;
-            
-               
-              
+                     
         
-    
     end process;
     
     

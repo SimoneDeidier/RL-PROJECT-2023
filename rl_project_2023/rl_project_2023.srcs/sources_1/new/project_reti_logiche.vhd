@@ -91,19 +91,20 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     
     
     
-    -- One bit demultiplexer, 1-bit input, 2 bit output, used to divide the input in output selection and memory address 
-    component one_bit_demux is
-        port(
-            input : in std_logic;
-            sel : in std_logic;
-            out_0 : out std_logic;
-            out_1 : out std_logic
-        );
-    end component;
+--    -- One bit demultiplexer, 1-bit input, 2 bit output, used to divide the input in output selection and memory address 
+--    component one_bit_demux is
+--        port(
+--            input : in std_logic;
+--            sel : in std_logic;
+--            out_0 : out std_logic;
+--            out_1 : out std_logic
+--        );
+--    end component;
     
     -- Two bit demultiplexer, 8-bit input, 9-bit output (8-bit data + 1-bit set signal), used to choose where to send memory data
     component two_bit_demux is
         port(
+            clock : in std_logic;
             input : in std_logic_vector(7 downto 0);
             sel : in std_logic_vector(1 downto 0);
             out_0 : out std_logic_vector(7 downto 0);
@@ -160,16 +161,17 @@ begin
     -- Mapping ports of external components
       
     
-    -- Demux to select where the input bit has to go
-    demux1 : one_bit_demux port map(
-        input => i_w,
-        sel => select_register,
-        out_0 => input_two_bit_sreg,
-        out_1 => input_address_sreg
-    );
+--    -- Demux to select where the input bit has to go
+--    demux1 : one_bit_demux port map(
+--        input => i_w,
+--        sel => select_register,
+--        out_0 => input_two_bit_sreg,
+--        out_1 => input_address_sreg
+--    );
     
     -- Demux to select in which output we want to set a new value
     demux2 : two_bit_demux port map(
+        clock => i_clk,
         input => i_mem_data,
         sel => out_two_bit_sreg,
         out_0 => z_0_input_reg,
@@ -184,7 +186,7 @@ begin
 
     -- Shift register to store the value of the ouput channel
     out_sreg : two_bit_sreg port map(
-        input => input_two_bit_sreg,
+        input => i_w,
         set => set_two_bit_reg,
         reset => i_rst,
         clock => i_clk,

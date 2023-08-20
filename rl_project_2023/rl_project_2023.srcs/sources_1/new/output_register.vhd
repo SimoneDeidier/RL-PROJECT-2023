@@ -51,16 +51,18 @@ begin
 
     register_proc : process(input_data, set, reset, clock, master_set, show_output)
     begin
-        if reset = '1' then
-            data <= "00000000";
-            output <= data;
-        elsif show_output = '1' and master_set = '0' then
-            output <= data;    
-        elsif show_output = '0' and master_set = '0' then
-             output <= "00000000"; 
-        elsif clock = '1' and clock'event and set = '1' and master_set = '1' then
-            data <= input_data;
-            output <= "00000000";            
+    if clock = '1' and clock'event then  
+            if reset = '1' then
+                data <= "00000000";
+                output <= data;
+            elsif show_output = '1' and master_set = '0' then
+                output <= data;    
+            elsif show_output = '0' and master_set = '0' then
+                output <= "00000000"; 
+            elsif set = '1' and master_set = '1' then
+                data <= input_data;
+                output <= "00000000";            
+     end if;       
         end if;
     end process;
 

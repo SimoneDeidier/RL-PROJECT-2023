@@ -46,6 +46,7 @@ begin
 
     one_bit_demux_proc : process(input, sel)
     begin
+    if clock = '1'  and clock'event TO_INTEGER
         case sel is
             when '0' =>
                 out_0 <= input;

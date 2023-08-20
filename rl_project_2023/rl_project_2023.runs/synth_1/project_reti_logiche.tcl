@@ -89,7 +89,6 @@ OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
   {C:/Users/edoar/Desktop/Reti Logiche/address_register.vhd}
   C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd
-  C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/one_bit_demux.vhd
   C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/output_register.vhd
   C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_demux.vhd
   C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_sreg.vhd
@@ -108,6 +107,8 @@ read_xdc C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_proj
 set_property used_in_implementation false [get_files C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/constrs_1/new/clock.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/utils_1/imports/synth_1/project_reti_logiche.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

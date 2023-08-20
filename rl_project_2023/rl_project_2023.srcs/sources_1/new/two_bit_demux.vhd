@@ -33,6 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity two_bit_demux is
     port(
+        clock : in std_logic;
         input : in std_logic_vector(7 downto 0);
         sel : in std_logic_vector(1 downto 0);
         out_0 : out std_logic_vector(7 downto 0);
@@ -48,12 +49,14 @@ end two_bit_demux;
 
 architecture two_bit_demux_arch of two_bit_demux is
 
+
+
 begin
 
-    two_bit_demux_proc : process(input, sel)
+    two_bit_demux_proc : process(input, sel, clock)
     begin
-        case sel is
-            when "00" =>
+    if clock = '1' and clock'event then
+        if (sel = "00") then
                 out_0 <= input;
                 out_1 <= "00000000";
                 out_2 <= "00000000";
@@ -62,7 +65,8 @@ begin
                 set_1 <= '0';
                 set_2 <= '0';
                 set_3 <= '0';
-            when "01" =>
+                
+        elsif sel = "01" then
                 out_0 <= "00000000";
                 out_1 <= input;
                 out_2 <= "00000000";
@@ -71,7 +75,7 @@ begin
                 set_1 <= '1';
                 set_2 <= '0';
                 set_3 <= '0';
-            when "10" =>
+         elsif sel = "10" then
                 out_0 <= "00000000";
                 out_1 <= "00000000";
                 out_2 <= input;
@@ -80,7 +84,7 @@ begin
                 set_1 <= '0';
                 set_2 <= '1';
                 set_3 <= '0';
-            when "11" =>
+         elsif sel = "10" then
                 out_0 <= "00000000";
                 out_1 <= "00000000";
                 out_2 <= "00000000";
@@ -89,16 +93,9 @@ begin
                 set_1 <= '0';
                 set_2 <= '0';
                 set_3 <= '1';
-            when others =>
-                out_0 <= "XXXXXXXX";
-                out_1 <= "XXXXXXXX";
-                out_2 <= "XXXXXXXX";
-                out_3 <= "XXXXXXXX";
-                set_0 <= 'X';
-                set_1 <= 'X';
-                set_2 <= 'X';
-                set_3 <= 'X';
-        end case;
+            
+        end if;
+    end if;
     end process;
 
 end two_bit_demux_arch;

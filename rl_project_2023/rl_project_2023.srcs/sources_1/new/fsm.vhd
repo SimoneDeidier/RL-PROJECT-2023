@@ -40,7 +40,7 @@ end fsm;
 
 architecture fsm_arch of fsm is
 
-    type S is (S_RESET, S_WAIT, SELECT_OUTPUT_LINE, TAKE_MEM_ADDR, MEM, WRITE_REGS, S_DONE );
+    type S is (S_RESET, S_WAIT, SELECT_OUTPUT_LINE, TAKE_MEM_ADDR, MEM, WRITE_REGS, WRITE_REGS_2, S_DONE );
     signal curr_state : S;
     signal counter_reset: std_logic;
     
@@ -71,6 +71,8 @@ architecture fsm_arch of fsm is
                 when MEM =>
                     curr_state <= WRITE_REGS;
                 when WRITE_REGS =>
+                    curr_state <= WRITE_REGS_2;
+                when WRITE_REGS_2 =>
                     curr_state <= S_DONE;
                 when S_DONE =>                 
                     curr_state <= S_WAIT;
@@ -113,6 +115,10 @@ architecture fsm_arch of fsm is
                 set_addr <= '0';
                 mem_en <= '1';             
             when WRITE_REGS =>
+                set_two_bit <= '0'; 
+                set_output_regs <= '1';
+                mem_en <= '1';
+            when WRITE_REGS_2 =>
                 set_two_bit <= '0'; 
                 set_output_regs <= '1';
                 mem_en <= '1';

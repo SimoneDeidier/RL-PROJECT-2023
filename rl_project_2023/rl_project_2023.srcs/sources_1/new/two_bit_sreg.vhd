@@ -49,11 +49,15 @@ begin
 
     two_bit_sreg_proc : process(input, set, reset, clock)
     begin
-        if clock'event and clock = '1' and set = '1' then
-            data(1) <= data(0);
-            data(0) <= input;          
+        if clock'event and clock = '1' then
+            if set = '1' then
+                data(1) <= data(0);
+                data(0) <= input; 
+            else
+                output <= data; 
+            end if;    
         end if;
-        output <= data;
+        
     end process;
 
 end two_bit_sreg_arch;

@@ -109,9 +109,11 @@ architecture fsm_arch of fsm is
                 set_two_bit <= '0';
                 set_addr <= '1';
             when MEM =>
+                set_two_bit <= '0'; 
                 set_addr <= '0';
-                mem_en <= '1';
+                mem_en <= '1';             
             when WRITE_REGS =>
+                set_two_bit <= '0'; 
                 set_output_regs <= '1';
                 mem_en <= '1';
             when S_DONE =>

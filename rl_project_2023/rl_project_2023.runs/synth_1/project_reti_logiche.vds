@@ -1,0 +1,301 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun Aug 20 16:24:11 2023
+# Process ID: 13084
+# Current directory: C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.runs/synth_1
+# Command line: vivado.exe -log project_reti_logiche.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_reti_logiche.tcl
+# Log file: C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.runs/synth_1/project_reti_logiche.vds
+# Journal file: C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.runs/synth_1\vivado.jou
+# Running On: DESKTOP-2BNRJ56, OS: Windows, CPU Frequency: 1996 MHz, CPU Physical cores: 8, Host memory: 7916 MB
+#-----------------------------------------------------------
+source project_reti_logiche.tcl -notrace
+Command: synth_design -top project_reti_logiche -part xc7a200tfbg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Device 21-403] Loading part xc7a200tfbg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 328
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1256.883 ; gain = 408.375
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'project_reti_logiche' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:57]
+INFO: [Synth 8-3491] module 'one_bit_demux' declared at 'C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/one_bit_demux.vhd:34' bound to instance 'demux1' of component 'one_bit_demux' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:164]
+INFO: [Synth 8-638] synthesizing module 'one_bit_demux' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/one_bit_demux.vhd:43]
+INFO: [Synth 8-226] default block is never used [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/one_bit_demux.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'one_bit_demux' (0#1) [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/one_bit_demux.vhd:43]
+INFO: [Synth 8-3491] module 'two_bit_demux' declared at 'C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_demux.vhd:34' bound to instance 'demux2' of component 'two_bit_demux' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:172]
+INFO: [Synth 8-638] synthesizing module 'two_bit_demux' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_demux.vhd:49]
+INFO: [Synth 8-226] default block is never used [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_demux.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'two_bit_demux' (0#1) [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_demux.vhd:49]
+INFO: [Synth 8-3491] module 'two_bit_sreg' declared at 'C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_sreg.vhd:34' bound to instance 'out_sreg' of component 'two_bit_sreg' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:186]
+INFO: [Synth 8-638] synthesizing module 'two_bit_sreg' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_sreg.vhd:44]
+WARNING: [Synth 8-614] signal 'data' is read in the process but is not in the sensitivity list [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_sreg.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'two_bit_sreg' (0#1) [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/two_bit_sreg.vhd:44]
+INFO: [Synth 8-3491] module 'address_register' declared at 'C:/Users/edoar/Desktop/Reti Logiche/address_register.vhd:34' bound to instance 'address_reg' of component 'address_register' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:195]
+INFO: [Synth 8-638] synthesizing module 'address_register' [C:/Users/edoar/Desktop/Reti Logiche/address_register.vhd:47]
+WARNING: [Synth 8-614] signal 'data' is read in the process but is not in the sensitivity list [C:/Users/edoar/Desktop/Reti Logiche/address_register.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'address_register' (0#1) [C:/Users/edoar/Desktop/Reti Logiche/address_register.vhd:47]
+INFO: [Synth 8-3491] module 'output_register' declared at 'C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/output_register.vhd:34' bound to instance 'z_0_output_register' of component 'output_register' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:207]
+INFO: [Synth 8-638] synthesizing module 'output_register' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/output_register.vhd:46]
+WARNING: [Synth 8-614] signal 'data' is read in the process but is not in the sensitivity list [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/output_register.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'output_register' (0#1) [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/output_register.vhd:46]
+INFO: [Synth 8-3491] module 'output_register' declared at 'C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/output_register.vhd:34' bound to instance 'z_1_output_register' of component 'output_register' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:218]
+INFO: [Synth 8-3491] module 'output_register' declared at 'C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/output_register.vhd:34' bound to instance 'z_2_output_register' of component 'output_register' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:229]
+INFO: [Synth 8-3491] module 'output_register' declared at 'C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/output_register.vhd:34' bound to instance 'z_3_output_register' of component 'output_register' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:240]
+INFO: [Synth 8-3491] module 'fsm' declared at 'C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd:34' bound to instance 'finite_state_machine' of component 'fsm' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:251]
+INFO: [Synth 8-638] synthesizing module 'fsm' [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'fsm' (0#1) [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'project_reti_logiche' (0#1) [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:57]
+WARNING: [Synth 8-3848] Net shift_addr_reg in module/entity project_reti_logiche does not have driver. [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd:76]
+WARNING: [Synth 8-7129] Port shift in module address_register is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module two_bit_sreg is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1346.402 ; gain = 497.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1346.402 ; gain = 497.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1346.402 ; gain = 497.895
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1346.402 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/constrs_1/new/clock.xdc]
+Finished Parsing XDC File [C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.srcs/constrs_1/new/clock.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1453.016 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1453.016 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tfbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'fsm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 s_reset |                              000 |                              000
+                  s_wait |                              001 |                              001
+      select_output_line |                              010 |                              010
+           take_mem_addr |                              011 |                              011
+                     mem |                              100 |                              100
+              write_regs |                              101 |                              101
+                  s_done |                              110 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'fsm'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 8     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input    8 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 12    
+	   3 Input    8 Bit        Muxes := 4     
+	   7 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 4     
+	   7 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design project_reti_logiche has port o_mem_we driven by constant 0
+WARNING: [Synth 8-3332] Sequential element (z_0_output_register/output_reg[7]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_0_output_register/output_reg[6]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_0_output_register/output_reg[5]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_0_output_register/output_reg[4]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_0_output_register/output_reg[3]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_0_output_register/output_reg[2]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_0_output_register/output_reg[1]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_0_output_register/output_reg[0]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_1_output_register/output_reg[7]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_1_output_register/output_reg[6]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_1_output_register/output_reg[5]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_1_output_register/output_reg[4]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_1_output_register/output_reg[3]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_1_output_register/output_reg[2]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_1_output_register/output_reg[1]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_1_output_register/output_reg[0]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_2_output_register/output_reg[7]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_2_output_register/output_reg[6]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_2_output_register/output_reg[5]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_2_output_register/output_reg[4]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_2_output_register/output_reg[3]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_2_output_register/output_reg[2]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_2_output_register/output_reg[1]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_2_output_register/output_reg[0]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_3_output_register/output_reg[7]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_3_output_register/output_reg[6]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_3_output_register/output_reg[5]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_3_output_register/output_reg[4]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_3_output_register/output_reg[3]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_3_output_register/output_reg[2]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_3_output_register/output_reg[1]_C) is unused and will be removed from module project_reti_logiche.
+WARNING: [Synth 8-3332] Sequential element (z_3_output_register/output_reg[0]_C) is unused and will be removed from module project_reti_logiche.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     1|
+|3     |LUT2 |    33|
+|4     |LUT3 |     3|
+|5     |LUT4 |     3|
+|6     |LUT5 |    74|
+|7     |FDCE |    50|
+|8     |FDPE |    33|
+|9     |FDRE |     2|
+|10    |LDC  |    32|
+|11    |IBUF |    12|
+|12    |OBUF |    51|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1453.016 ; gain = 604.508
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 34 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:30 . Memory (MB): peak = 1453.016 ; gain = 497.895
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1453.016 ; gain = 604.508
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1453.016 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1453.016 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  LDC => LDCE: 32 instances
+
+Synth Design complete, checksum: d242880c
+INFO: [Common 17-83] Releasing license: Synthesis
+43 Infos, 40 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:39 . Memory (MB): peak = 1453.016 ; gain = 1058.617
+INFO: [Common 17-1381] The checkpoint 'C:/Users/edoar/Documents/GitHub/RL_PROJECT_2023/rl_project_2023/rl_project_2023.runs/synth_1/project_reti_logiche.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file project_reti_logiche_utilization_synth.rpt -pb project_reti_logiche_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 20 16:24:57 2023...

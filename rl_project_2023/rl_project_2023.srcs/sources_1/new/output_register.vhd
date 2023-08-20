@@ -49,25 +49,20 @@ architecture output_register_arch of output_register is
 
 begin
 
-    data_register_proc : process(input_data, set, reset, clock)
+    register_proc : process(input_data, set, reset, clock, master_set, show_output)
     begin
         if reset = '1' then
             data <= "00000000";
             output <= data;
-        elsif master_set'event and set = '1' and master_set = '1' then
+        elsif show_output = '1' and master_set = '0' then
+            output <= data;    
+        elsif show_output = '0' and master_set = '0' then
+             output <= "00000000"; 
+        elsif clock = '1' and clock'event and set = '1' and master_set = '1' then
             data <= input_data;
+            output <= "00000000";            
         end if;
     end process;
 
-    output_register_proc : process(clock, show_output, reset)
-    begin
-        if reset = '1' then
-            data <= "00000000";
-        elsif clock'event and clock = '1' and show_output = '1' then
-            output <= data;
-        else 
-            output <= "00000000";
-        end if;
-    end process;
 
 end output_register_arch;

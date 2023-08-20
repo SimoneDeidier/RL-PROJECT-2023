@@ -34,33 +34,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity fsm is
     port(
             clock, start, reset:  in std_logic;
-            mem_we, mem_en, done, reset_all_regs, select_register,  show_output_reg, rst_addr, set_addr, set_two_bit: out std_logic
+            mem_we, mem_en, done, reset_all_regs, select_register,  show_output_reg, rst_addr, set_addr, set_two_bit, set_output_regs: out std_logic
         );
 end fsm;
 
 architecture fsm_arch of fsm is
 
-    type S is (S_RESET, S_WAIT, SELECT_OUTPUT_LINE, TAKE_MEM_ADDR, MEM, S_DONE );
+    type S is (S_RESET, S_WAIT, SELECT_OUTPUT_LINE, TAKE_MEM_ADDR, MEM, WRITE_REGS, S_DONE );
     signal curr_state : S;
     signal counter_reset: std_logic;
-    signal clk_count: std_logic_vector(1 downto 0);
     
-    component counter is
-    port(
-            clock: in std_logic;
-            reset: in std_logic;
-            output : out std_logic_vector(1 downto 0)
-        );
-    end component;
-
-    begin 
-    clk_counter : counter port map(
-        clock => clock,
-        reset => counter_reset,
-        output => clk_count
-    );
+    
 
 
+    begin
         
     fsm : process(clock, reset)
     
@@ -76,14 +63,14 @@ architecture fsm_arch of fsm is
                         curr_state <= SELECT_OUTPUT_LINE;
                     end if;
                 when SELECT_OUTPUT_LINE =>
-                    if clk_count = "11" then
-                            curr_state <= TAKE_MEM_ADDR;
-                    end if;
+                    curr_state <= TAKE_MEM_ADDR;
                 when TAKE_MEM_ADDR =>
                     if start = '0' then 
                         curr_state <= MEM;
                     end if;
                 when MEM =>
+                    curr_state <= WRITE_REGS;
+                when WRITE_REGS =>
                     curr_state <= S_DONE;
                 when S_DONE =>                 
                     curr_state <= S_WAIT;
@@ -104,7 +91,7 @@ architecture fsm_arch of fsm is
         rst_addr <= '0';
         set_addr <= '0';
         set_two_bit <= '1';       
-        
+        set_output_regs <= '0';
         
         case curr_state is
             when S_RESET =>
@@ -123,6 +110,9 @@ architecture fsm_arch of fsm is
                 set_addr <= '1';
             when MEM =>
                 set_addr <= '0';
+                mem_en <= '1';
+            when WRITE_REGS =>
+                set_output_regs <= '1';
                 mem_en <= '1';
             when S_DONE =>
                 rst_addr <= '1';

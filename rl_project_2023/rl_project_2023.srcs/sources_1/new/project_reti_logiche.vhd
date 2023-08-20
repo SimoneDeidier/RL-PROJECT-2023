@@ -75,28 +75,19 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     signal set_addr_reg : std_logic;
     signal shift_addr_reg : std_logic;
     signal show_output : std_logic;
-    
+    signal set_output_regs : std_logic;
     -- FSM states
     
     component fsm is
         port(
             clock, start, reset:  in std_logic;
-            mem_we, mem_en, done, reset_all_regs, select_register,  show_output_reg, rst_addr, set_addr, set_two_bit: out std_logic
+            mem_we, mem_en, done, reset_all_regs, select_register,  show_output_reg, rst_addr, set_addr, set_two_bit, set_output_regs : out std_logic
         );
     end component;
     
     
     -- Definitions of all the components
-    
-    -- counter: it counts 2 clocks events and START; it controls when to switch "select_register"
-    component counter is
-        port(
-            clock: in std_logic;
-            reset: in std_logic;
-            output : out std_logic_vector(1 downto 0)
-        );
-        end component;
-    
+        
     
     
     
@@ -146,6 +137,7 @@ architecture project_reti_logiche_arch of project_reti_logiche is
             reset_addr : in std_logic;
             shift : in std_logic;
             clock : in std_logic;
+            start : in std_logic;
             output : out std_logic_vector(15 downto 0)
         );
     end component;
@@ -155,6 +147,7 @@ architecture project_reti_logiche_arch of project_reti_logiche is
         port(
             input_data : in std_logic_vector(7 downto 0);
             set : in std_logic;
+            master_set : in std_logic;
             reset : in std_logic;
             clock : in std_logic;
             show_output : in std_logic;
@@ -165,6 +158,7 @@ architecture project_reti_logiche_arch of project_reti_logiche is
 begin
 
     -- Mapping ports of external components
+      
     
     -- Demux to select where the input bit has to go
     demux1 : one_bit_demux port map(
@@ -192,27 +186,29 @@ begin
     out_sreg : two_bit_sreg port map(
         input => input_two_bit_sreg,
         set => set_two_bit_reg,
-        reset => reset_all_regs,
+        reset => i_rst,
         clock => i_clk,
         output => out_two_bit_sreg
     );
 
     -- Shift register to store the addres of the memory
     address_reg : address_register port map(
-        input => input_address_sreg,
+        input => i_w,
         set => set_addr_reg,
-        reset => reset_all_regs,
+        reset => i_rst,
         reset_addr => rst_addr,
         shift => shift_addr_reg,
         clock => i_clk,
-        output => o_mem_addr
+        output => o_mem_addr,
+        start => i_start
     );
     
     -- Register for first out line
     z_0_output_register : output_register port map(
         input_data => z_0_input_reg,
         set => z_0_set_reg,
-        reset => reset_all_regs,
+        master_set => set_output_regs,
+        reset => i_rst,
         clock => i_clk ,
         show_output => show_output,
         output => o_z0
@@ -222,7 +218,8 @@ begin
     z_1_output_register : output_register port map(
         input_data => z_1_input_reg,
         set => z_1_set_reg,
-        reset => reset_all_regs,
+        master_set => set_output_regs,
+        reset => i_rst,
         clock => i_clk ,
         show_output => show_output,
         output => o_z1
@@ -232,7 +229,8 @@ begin
     z_2_output_register : output_register port map(
         input_data => z_2_input_reg,
         set => z_2_set_reg,
-        reset => reset_all_regs,
+        master_set => set_output_regs,
+        reset => i_rst,
         clock => i_clk ,
         show_output => show_output,
         output => o_z2
@@ -242,7 +240,8 @@ begin
     z_3_output_register : output_register port map(
         input_data => z_3_input_reg,
         set => z_3_set_reg,
-        reset => reset_all_regs,
+        master_set => set_output_regs,
+        reset => i_rst,
         clock => i_clk ,
         show_output => show_output,
         output => o_z3
@@ -261,7 +260,8 @@ begin
         rst_addr => rst_addr,
         select_register => select_register,
         set_addr => set_addr_reg,
-        set_two_bit => set_two_bit_reg
+        set_two_bit => set_two_bit_reg,
+        set_output_regs => set_output_regs
     );
 
 end project_reti_logiche_arch;

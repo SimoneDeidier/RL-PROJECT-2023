@@ -35,10 +35,10 @@ entity two_bit_demux is
     port(
         input : in std_logic_vector(7 downto 0);
         sel : in std_logic_vector(1 downto 0);
-        out_0 : out std_logic_vector(8 downto 0);
-        out_1 : out std_logic_vector(8 downto 0);
-        out_2 : out std_logic_vector(8 downto 0);
-        out_3 : out std_logic_vector(8 downto 0);
+        out_0 : out std_logic_vector(7 downto 0);
+        out_1 : out std_logic_vector(7 downto 0);
+        out_2 : out std_logic_vector(7 downto 0);
+        out_3 : out std_logic_vector(7 downto 0);
         set_0 : out std_logic;
         set_1 : out std_logic;
         set_2 : out std_logic;

@@ -35,6 +35,7 @@ entity output_register is
     port(
             input_data : in std_logic_vector(7 downto 0);
             set : in std_logic;
+            master_set : in std_logic;
             reset : in std_logic;
             clock : in std_logic;
             show_output : in std_logic;
@@ -53,16 +54,18 @@ begin
         if reset = '1' then
             data <= "00000000";
             output <= data;
-        elsif clock'event and clock = '1' and set = '1' then
+        elsif master_set'event and set = '1' and master_set = '1' then
             data <= input_data;
         end if;
     end process;
 
-    output_register_proc : process(show_output)
+    output_register_proc : process(clock, show_output, reset)
     begin
-        if clock'event and clock = '1' and show_output = '1' then
+        if reset = '1' then
+            data <= "00000000";
+        elsif clock'event and clock = '1' and show_output = '1' then
             output <= data;
-        elsif clock'event and clock = '1' and show_output = '0' then
+        else 
             output <= "00000000";
         end if;
     end process;

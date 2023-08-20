@@ -16,3 +16,18 @@ rl_project_2023/rl_project_2023.cache/
 **/.DS_Store
 
 
+# Simulations
+rl_project_2023/rl_project_2023.sim/*
+rl_project_2023/rl_project_2023.sim/**
+
+
+rl_project_2023/rl_project_2023.ip_user_files/README.txt
+rl_project_2023/hs_err_pid14908.dmp
+
+
+#str pid files
+rl_project_2023/*.str
+
+
+
+

@@ -123,7 +123,6 @@ architecture project_reti_logiche_arch of project_reti_logiche is
         port(
             input : in std_logic;
             set : in std_logic;
-            reset : in std_logic;
             clock : in std_logic;
             output : out std_logic_vector(1 downto 0)
         );
@@ -188,7 +187,6 @@ begin
     out_sreg : two_bit_sreg port map(
         input => i_w,
         set => set_two_bit_reg,
-        reset => i_rst,
         clock => i_clk,
         output => out_two_bit_sreg
     );

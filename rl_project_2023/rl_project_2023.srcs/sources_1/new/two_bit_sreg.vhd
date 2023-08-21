@@ -35,7 +35,6 @@ entity two_bit_sreg is
     port(
         input : in std_logic;
         set : in std_logic;
-        reset : in std_logic;
         clock : in std_logic;
         output : out std_logic_vector(1 downto 0)
     );
@@ -47,7 +46,7 @@ architecture two_bit_sreg_arch of two_bit_sreg is
 
 begin
 
-    two_bit_sreg_proc : process(input, set, reset, clock)
+    two_bit_sreg_proc : process(input, set, clock)
     begin
         if clock'event and clock = '1' then
             if set = '1' then

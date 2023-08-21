@@ -84,7 +84,7 @@ begin
                 set_1 <= '0';
                 set_2 <= '1';
                 set_3 <= '0';
-         elsif sel = "10" then
+         elsif sel = "11" then
                 out_0 <= "00000000";
                 out_1 <= "00000000";
                 out_2 <= "00000000";

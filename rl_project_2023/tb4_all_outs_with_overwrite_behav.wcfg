@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb4_all_outs_with_overwrite_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb4_all_outs_with_overwrite" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2,262.200 ns"></ZoomStartTime>
+      <ZoomEndTime time="4,165.402 ns"></ZoomEndTime>
+      <Cursor1Time time="3,651.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="215"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="41" />
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/tb_done" type="logic">
+      <obj_property name="ElementShortName">tb_done</obj_property>
+      <obj_property name="ObjectShortName">tb_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/mem_address" type="array">
+      <obj_property name="ElementShortName">mem_address[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_address[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/tb_rst" type="logic">
+      <obj_property name="ElementShortName">tb_rst</obj_property>
+      <obj_property name="ObjectShortName">tb_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/tb_start" type="logic">
+      <obj_property name="ElementShortName">tb_start</obj_property>
+      <obj_property name="ObjectShortName">tb_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/tb_clk" type="logic">
+      <obj_property name="ElementShortName">tb_clk</obj_property>
+      <obj_property name="ObjectShortName">tb_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/mem_o_data" type="array">
+      <obj_property name="ElementShortName">mem_o_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_o_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/mem_i_data" type="array">
+      <obj_property name="ElementShortName">mem_i_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_i_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/enable_wire" type="logic">
+      <obj_property name="ElementShortName">enable_wire</obj_property>
+      <obj_property name="ObjectShortName">enable_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/mem_we" type="logic">
+      <obj_property name="ElementShortName">mem_we</obj_property>
+      <obj_property name="ObjectShortName">mem_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/tb_z0" type="array">
+      <obj_property name="ElementShortName">tb_z0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/tb_z1" type="array">
+      <obj_property name="ElementShortName">tb_z1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/tb_z2" type="array">
+      <obj_property name="ElementShortName">tb_z2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/tb_z3" type="array">
+      <obj_property name="ElementShortName">tb_z3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/tb_w" type="logic">
+      <obj_property name="ElementShortName">tb_w</obj_property>
+      <obj_property name="ObjectShortName">tb_w</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/scenario_rst" type="array">
+      <obj_property name="ElementShortName">scenario_rst[0:105]</obj_property>
+      <obj_property name="ObjectShortName">scenario_rst[0:105]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/scenario_start" type="array">
+      <obj_property name="ElementShortName">scenario_start[0:105]</obj_property>
+      <obj_property name="ObjectShortName">scenario_start[0:105]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/scenario_w" type="array">
+      <obj_property name="ElementShortName">scenario_w[0:105]</obj_property>
+      <obj_property name="ObjectShortName">scenario_w[0:105]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/CLOCK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLOCK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLOCK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/SCENARIOLENGTH" type="other">
+      <obj_property name="ElementShortName">SCENARIOLENGTH</obj_property>
+      <obj_property name="ObjectShortName">SCENARIOLENGTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_2_output_register/input_data" type="array">
+      <obj_property name="ElementShortName">input_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">input_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_2_output_register/set" type="logic">
+      <obj_property name="ElementShortName">set</obj_property>
+      <obj_property name="ObjectShortName">set</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_2_output_register/master_set" type="logic">
+      <obj_property name="ElementShortName">master_set</obj_property>
+      <obj_property name="ObjectShortName">master_set</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_2_output_register/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_2_output_register/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_2_output_register/show_output" type="logic">
+      <obj_property name="ElementShortName">show_output</obj_property>
+      <obj_property name="ObjectShortName">show_output</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_2_output_register/output" type="array">
+      <obj_property name="ElementShortName">output[7:0]</obj_property>
+      <obj_property name="ObjectShortName">output[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_2_output_register/data" type="array">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/out_sreg/input" type="logic">
+      <obj_property name="ElementShortName">input</obj_property>
+      <obj_property name="ObjectShortName">input</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/out_sreg/set" type="logic">
+      <obj_property name="ElementShortName">set</obj_property>
+      <obj_property name="ObjectShortName">set</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/out_sreg/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/out_sreg/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/out_sreg/output" type="array">
+      <obj_property name="ElementShortName">output[1:0]</obj_property>
+      <obj_property name="ObjectShortName">output[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/out_sreg/data" type="array">
+      <obj_property name="ElementShortName">data[1:0]</obj_property>
+      <obj_property name="ObjectShortName">data[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_3_output_register/input_data" type="array">
+      <obj_property name="ElementShortName">input_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">input_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_3_output_register/set" type="logic">
+      <obj_property name="ElementShortName">set</obj_property>
+      <obj_property name="ObjectShortName">set</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_3_output_register/master_set" type="logic">
+      <obj_property name="ElementShortName">master_set</obj_property>
+      <obj_property name="ObjectShortName">master_set</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_3_output_register/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_3_output_register/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_3_output_register/show_output" type="logic">
+      <obj_property name="ElementShortName">show_output</obj_property>
+      <obj_property name="ObjectShortName">show_output</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_3_output_register/output" type="array">
+      <obj_property name="ElementShortName">output[7:0]</obj_property>
+      <obj_property name="ObjectShortName">output[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb4_all_outs_with_overwrite/UUT/z_3_output_register/data" type="array">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+</wave_config>

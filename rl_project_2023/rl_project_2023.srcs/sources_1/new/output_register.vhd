@@ -54,14 +54,15 @@ begin
     if clock = '1' and clock'event then  
             if reset = '1' then
                 data <= "00000000";
-                output <= data;
             elsif show_output = '1' and master_set = '0' then
                 output <= data;    
             elsif show_output = '0' and master_set = '0' then
                 output <= "00000000"; 
             elsif set = '1' and master_set = '1' then
                 data <= input_data;
-                output <= "00000000";            
+                output <= "00000000";
+            else
+                output <= "00000000";       
      end if;       
         end if;
     end process;

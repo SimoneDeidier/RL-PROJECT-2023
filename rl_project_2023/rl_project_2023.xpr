@@ -44,7 +44,7 @@
     <Option Name="SimulatorGccVersionActiveHdl" Val="9.3.0"/>
     <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="ActiveSimSet" Val="sim_1"/>
+    <Option Name="ActiveSimSet" Val="sim_6"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
@@ -58,7 +58,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="162"/>
+    <Option Name="WTXSimLaunchSim" Val="189"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -479,6 +479,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_d1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_d1" RelGenDir="$PGENDIR/sim_d1">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_d1/imports/Testbench/tb1_empty_address.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb1_empty_address.vhd"/>
@@ -503,6 +504,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_d2" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_d2" RelGenDir="$PGENDIR/sim_d2">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_d2/imports/Testbench/tb2_full_address.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb2_full_address.vhd"/>
@@ -527,6 +529,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_d3" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_d3" RelGenDir="$PGENDIR/sim_d3">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_d3/imports/Testbench/tb3_all_outs.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb3_all_outs.vhd"/>
@@ -551,6 +554,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d4" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d4" RelGenDir="$PGENDIR/d4">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d4/imports/Testbench/tb4_all_outs_with_overwrite.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb4_all_outs_with_overwrite.vhd"/>
@@ -567,7 +571,6 @@
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SelectedSimModel" Val="rtl"/>
-        <Option Name="SimMode" Val="post-synthesis"/>
         <Option Name="PamDesignTestbench" Val=""/>
         <Option Name="PamDutBypassFile" Val="xil_dut_bypass"/>
         <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
@@ -577,6 +580,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_d5" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_d5" RelGenDir="$PGENDIR/sim_d5">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_d5/imports/Testbench/tb5_reset_start_1.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb5_reset_start_1.vhd"/>
@@ -601,6 +605,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d6" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d6" RelGenDir="$PGENDIR/d6">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d6/imports/Testbench/tb6_reset_ask_mem.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb6_reset_ask_mem.vhd"/>
@@ -625,6 +630,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d7" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d7" RelGenDir="$PGENDIR/d7">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d7/imports/Testbench/tb7_reset_read_mem.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb7_reset_read_mem.vhd"/>
@@ -649,6 +655,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d8" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d8" RelGenDir="$PGENDIR/d8">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d8/imports/Testbench/tb8_save_out.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb8_save_out.vhd"/>
@@ -673,6 +680,7 @@
       </Config>
     </FileSet>
     <FileSet Name="ddd9" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/ddd9" RelGenDir="$PGENDIR/ddd9">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/ddd9/imports/Testbench/tb9_show_out.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb9_show_out.vhd"/>
@@ -697,6 +705,7 @@
       </Config>
     </FileSet>
     <FileSet Name="10" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/10" RelGenDir="$PGENDIR/10">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/10/imports/Testbench/tb10_complete_long.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RL_PROJECT_2023/Testbench/tb10_complete_long.vhd"/>

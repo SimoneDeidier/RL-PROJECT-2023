@@ -1,0 +1,1144 @@
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run all
+Failure: Simulation Ended! TEST PASSATO 
+Time: 35200 ns  Iteration: 0  Process: /tb10_complete_long/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/10/imports/Testbench/tb10_complete_long.vhd
+$finish called at time : 35200 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/10/imports/Testbench/tb10_complete_long.vhd" Line 356
+launch_simulation -simset [get_filesets ddd9 ]
+Command: launch_simulation  -simset ddd9
+INFO: [Vivado 12-12493] Simulation top is 'tb9_show_out'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/ddd9/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'ddd9'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb9_show_out' in fileset 'ddd9'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'ddd9'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/ddd9/behav/xsim'
+"xvhdl --incr --relax -prj tb9_show_out_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/ddd9/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb9_show_out_behav xil_defaultlib.tb9_show_out -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb9_show_out_behav xil_defaultlib.tb9_show_out -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture tb9_arch of entity xil_defaultlib.tb9_show_out
+Built simulation snapshot tb9_show_out_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/ddd9/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb9_show_out_behav -key {Behavioral:ddd9:Functional:tb9_show_out} -tclbatch {tb9_show_out.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb9_show_out.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/tb9_show_out/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb9_show_out_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1242.215 ; gain = 0.000
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 2400 ns  Iteration: 0  Process: /tb9_show_out/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/ddd9/imports/Testbench/tb9_show_out.vhd
+$finish called at time : 2400 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/ddd9/imports/Testbench/tb9_show_out.vhd" Line 192
+launch_simulation -simset [get_filesets d8 ]
+Command: launch_simulation  -simset d8
+INFO: [Vivado 12-12493] Simulation top is 'tb8_save_out'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d8/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'd8'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb8_save_out' in fileset 'd8'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'd8'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d8/behav/xsim'
+"xvhdl --incr --relax -prj tb8_save_out_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d8/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb8_save_out_behav xil_defaultlib.tb8_save_out -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb8_save_out_behav xil_defaultlib.tb8_save_out -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture tb8_arch of entity xil_defaultlib.tb8_save_out
+Built simulation snapshot tb8_save_out_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d8/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb8_save_out_behav -key {Behavioral:d8:Functional:tb8_save_out} -tclbatch {tb8_save_out.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb8_save_out.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/tb8_save_out/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb8_save_out_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1242.215 ; gain = 0.000
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 2300 ns  Iteration: 0  Process: /tb8_save_out/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/d8/imports/Testbench/tb8_save_out.vhd
+$finish called at time : 2300 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/d8/imports/Testbench/tb8_save_out.vhd" Line 193
+launch_simulation -simset [get_filesets d7 ]
+Command: launch_simulation  -simset d7
+INFO: [Vivado 12-12493] Simulation top is 'tb7_reset_read_mem'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d7/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'd7'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb7_reset_read_mem' in fileset 'd7'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'd7'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d7/behav/xsim'
+"xvhdl --incr --relax -prj tb7_reset_read_mem_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d7/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb7_reset_read_mem_behav xil_defaultlib.tb7_reset_read_mem -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb7_reset_read_mem_behav xil_defaultlib.tb7_reset_read_mem -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture tb7_arch of entity xil_defaultlib.tb7_reset_read_mem
+Built simulation snapshot tb7_reset_read_mem_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d7/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb7_reset_read_mem_behav -key {Behavioral:d7:Functional:tb7_reset_read_mem} -tclbatch {tb7_reset_read_mem.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb7_reset_read_mem.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/tb7_reset_read_mem/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb7_reset_read_mem_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1242.215 ; gain = 0.000
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 2300 ns  Iteration: 0  Process: /tb7_reset_read_mem/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/d7/imports/Testbench/tb7_reset_read_mem.vhd
+$finish called at time : 2300 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/d7/imports/Testbench/tb7_reset_read_mem.vhd" Line 191
+launch_simulation -simset [get_filesets d6 ]
+Command: launch_simulation  -simset d6
+INFO: [Vivado 12-12493] Simulation top is 'tb6_reset_ask_mem'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d6/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'd6'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb6_reset_ask_mem' in fileset 'd6'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'd6'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d6/behav/xsim'
+"xvhdl --incr --relax -prj tb6_reset_ask_mem_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d6/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb6_reset_ask_mem_behav xil_defaultlib.tb6_reset_ask_mem -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb6_reset_ask_mem_behav xil_defaultlib.tb6_reset_ask_mem -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture tb6_arch of entity xil_defaultlib.tb6_reset_ask_mem
+Built simulation snapshot tb6_reset_ask_mem_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d6/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb6_reset_ask_mem_behav -key {Behavioral:d6:Functional:tb6_reset_ask_mem} -tclbatch {tb6_reset_ask_mem.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb6_reset_ask_mem.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/tb6_reset_ask_mem/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb6_reset_ask_mem_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1261.734 ; gain = 19.520
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 2300 ns  Iteration: 0  Process: /tb6_reset_ask_mem/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/d6/imports/Testbench/tb6_reset_ask_mem.vhd
+$finish called at time : 2300 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/d6/imports/Testbench/tb6_reset_ask_mem.vhd" Line 191
+launch_simulation -simset [get_filesets sim_d5 ]
+Command: launch_simulation  -simset sim_d5
+INFO: [Vivado 12-12493] Simulation top is 'tb5_reset_start_1'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_d5'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb5_reset_start_1' in fileset 'sim_d5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_d5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d5/behav/xsim'
+"xvhdl --incr --relax -prj tb5_reset_start_1_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d5/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb5_reset_start_1_behav xil_defaultlib.tb5_reset_start_1 -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb5_reset_start_1_behav xil_defaultlib.tb5_reset_start_1 -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture tb5_arch of entity xil_defaultlib.tb5_reset_start_1
+Built simulation snapshot tb5_reset_start_1_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb5_reset_start_1_behav -key {Behavioral:sim_d5:Functional:tb5_reset_start_1} -tclbatch {tb5_reset_start_1.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb5_reset_start_1.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/tb5_reset_start_1/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb5_reset_start_1_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1262.770 ; gain = 1.035
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 1900 ns  Iteration: 0  Process: /tb5_reset_start_1/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_d5/imports/Testbench/tb5_reset_start_1.vhd
+$finish called at time : 1900 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_d5/imports/Testbench/tb5_reset_start_1.vhd" Line 184
+launch_simulation -simset [get_filesets d4 ]
+Command: launch_simulation  -simset d4
+INFO: [Vivado 12-12493] Simulation top is 'tb4_all_outs_with_overwrite'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d4/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'd4'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb4_all_outs_with_overwrite' in fileset 'd4'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'd4'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d4/behav/xsim'
+"xvhdl --incr --relax -prj tb4_all_outs_with_overwrite_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d4/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb4_all_outs_with_overwrite_behav xil_defaultlib.tb4_all_outs_with_overwrite -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb4_all_outs_with_overwrite_behav xil_defaultlib.tb4_all_outs_with_overwrite -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture tb4_arch of entity xil_defaultlib.tb4_all_outs_with_overwrite
+Built simulation snapshot tb4_all_outs_with_overwrite_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/d4/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb4_all_outs_with_overwrite_behav -key {Behavioral:d4:Functional:tb4_all_outs_with_overwrite} -tclbatch {tb4_all_outs_with_overwrite.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb4_all_outs_with_overwrite.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/tb4_all_outs_with_overwrite/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb4_all_outs_with_overwrite_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1271.520 ; gain = 8.719
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 11200 ns  Iteration: 0  Process: /tb4_all_outs_with_overwrite/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/d4/imports/Testbench/tb4_all_outs_with_overwrite.vhd
+$finish called at time : 11200 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/d4/imports/Testbench/tb4_all_outs_with_overwrite.vhd" Line 292
+launch_simulation -simset [get_filesets sim_d3 ]
+Command: launch_simulation  -simset sim_d3
+INFO: [Vivado 12-12493] Simulation top is 'tb3_all_outs'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d3/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_d3'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb3_all_outs' in fileset 'sim_d3'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_d3'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d3/behav/xsim'
+"xvhdl --incr --relax -prj tb3_all_outs_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d3/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb3_all_outs_behav xil_defaultlib.tb3_all_outs -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb3_all_outs_behav xil_defaultlib.tb3_all_outs -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture tb3_arch of entity xil_defaultlib.tb3_all_outs
+Built simulation snapshot tb3_all_outs_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d3/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb3_all_outs_behav -key {Behavioral:sim_d3:Functional:tb3_all_outs} -tclbatch {tb3_all_outs.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb3_all_outs.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/tb3_all_outs/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb3_all_outs_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1290.465 ; gain = 15.875
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 6700 ns  Iteration: 0  Process: /tb3_all_outs/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_d3/imports/Testbench/tb3_all_outs.vhd
+$finish called at time : 6700 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_d3/imports/Testbench/tb3_all_outs.vhd" Line 222
+launch_simulation -simset [get_filesets sim_d2 ]
+Command: launch_simulation  -simset sim_d2
+INFO: [Vivado 12-12493] Simulation top is 'tb2_full_address'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d2/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_d2'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb2_full_address' in fileset 'sim_d2'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_d2'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d2/behav/xsim'
+"xvhdl --incr --relax -prj tb2_full_address_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d2/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb2_full_address_behav xil_defaultlib.tb2_full_address -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb2_full_address_behav xil_defaultlib.tb2_full_address -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture tb2_arch of entity xil_defaultlib.tb2_full_address
+Built simulation snapshot tb2_full_address_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d2/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb2_full_address_behav -key {Behavioral:sim_d2:Functional:tb2_full_address} -tclbatch {tb2_full_address.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb2_full_address.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/tb2_full_address/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb2_full_address_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1314.781 ; gain = 21.984
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 4 us  Iteration: 0  Process: /tb2_full_address/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_d2/imports/Testbench/tb2_full_address.vhd
+$finish called at time : 4 us : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_d2/imports/Testbench/tb2_full_address.vhd" Line 188
+launch_simulation -simset [get_filesets sim_d1 ]
+Command: launch_simulation  -simset sim_d1
+INFO: [Vivado 12-12493] Simulation top is 'tb1'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_d1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb1' in fileset 'sim_d1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_d1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d1/behav/xsim'
+"xvhdl --incr --relax -prj tb1_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb1_behav xil_defaultlib.tb1 -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb1_behav xil_defaultlib.tb1 -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture tb1_arch of entity xil_defaultlib.tb1
+Built simulation snapshot tb1_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_d1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb1_behav -key {Behavioral:sim_d1:Functional:tb1} -tclbatch {tb1.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb1.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/tb1/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb1_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1342.281 ; gain = 17.703
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 3900 ns  Iteration: 0  Process: /tb1/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_d1/imports/Testbench/tb1_empty_address.vhd
+$finish called at time : 3900 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_d1/imports/Testbench/tb1_empty_address.vhd" Line 186
+launch_simulation -simset [get_filesets sim_tb7 ]
+Command: launch_simulation  -simset sim_tb7
+INFO: [Vivado 12-12493] Simulation top is 'project_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb7/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_tb7'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'project_tb' in fileset 'sim_tb7'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_tb7'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb7/behav/xsim'
+"xvhdl --incr --relax -prj project_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb7/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture projecttb of entity xil_defaultlib.project_tb
+Built simulation snapshot project_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb7/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "project_tb_behav -key {Behavioral:sim_tb7:Functional:project_tb} -tclbatch {project_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source project_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/project_tb/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'project_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1370.074 ; gain = 27.508
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 1900 ns  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb7/imports/tbset_new/tb_7.vhd
+$finish called at time : 1900 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb7/imports/tbset_new/tb_7.vhd" Line 162
+launch_simulation -simset [get_filesets sim_tb6 ]
+Command: launch_simulation  -simset sim_tb6
+INFO: [Vivado 12-12493] Simulation top is 'project_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb6/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_tb6'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'project_tb' in fileset 'sim_tb6'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_tb6'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb6/behav/xsim'
+"xvhdl --incr --relax -prj project_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb6/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture projecttb of entity xil_defaultlib.project_tb
+Built simulation snapshot project_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb6/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "project_tb_behav -key {Behavioral:sim_tb6:Functional:project_tb} -tclbatch {project_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source project_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/project_tb/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'project_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1400.273 ; gain = 29.992
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 3500 ns  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb6/imports/tbset_new/tb_6.vhd
+$finish called at time : 3500 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb6/imports/tbset_new/tb_6.vhd" Line 162
+launch_simulation -simset [get_filesets sim_tb5 ]
+Command: launch_simulation  -simset sim_tb5
+INFO: [Vivado 12-12493] Simulation top is 'project_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_tb5'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'project_tb' in fileset 'sim_tb5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_tb5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb5/behav/xsim'
+"xvhdl --incr --relax -prj project_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb5/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture projecttb of entity xil_defaultlib.project_tb
+Built simulation snapshot project_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "project_tb_behav -key {Behavioral:sim_tb5:Functional:project_tb} -tclbatch {project_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source project_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/project_tb/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'project_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1424.219 ; gain = 23.797
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 62500 ns  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb5/imports/tbset_new/tb_5.vhd
+$finish called at time : 62500 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb5/imports/tbset_new/tb_5.vhd" Line 542
+launch_simulation -simset [get_filesets sim_tb4 ]
+Command: launch_simulation  -simset sim_tb4
+INFO: [Vivado 12-12493] Simulation top is 'project_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb4/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_tb4'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'project_tb' in fileset 'sim_tb4'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_tb4'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb4/behav/xsim'
+"xvhdl --incr --relax -prj project_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb4/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture projecttb of entity xil_defaultlib.project_tb
+Built simulation snapshot project_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb4/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "project_tb_behav -key {Behavioral:sim_tb4:Functional:project_tb} -tclbatch {project_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source project_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/project_tb/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'project_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1485.008 ; gain = 41.031
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 12700 ns  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb4/imports/tbset_new/tb_4.vhd
+$finish called at time : 12700 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb4/imports/tbset_new/tb_4.vhd" Line 222
+launch_simulation -simset [get_filesets sim_tb_2 ]
+Command: launch_simulation  -simset sim_tb_2
+INFO: [Vivado 12-12493] Simulation top is 'project_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb_2/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_tb_2'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'project_tb' in fileset 'sim_tb_2'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_tb_2'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb_2/behav/xsim'
+"xvhdl --incr --relax -prj project_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb_2/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture projecttb of entity xil_defaultlib.project_tb
+Built simulation snapshot project_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb_2/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "project_tb_behav -key {Behavioral:sim_tb_2:Functional:project_tb} -tclbatch {project_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source project_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/project_tb/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'project_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1509.078 ; gain = 20.887
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 32600 ns  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb_2/imports/tbset_new/tb_2.vhd
+$finish called at time : 32600 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb_2/imports/tbset_new/tb_2.vhd" Line 342
+launch_simulation -simset [get_filesets sim_tb3 ]
+Command: launch_simulation  -simset sim_tb3
+INFO: [Vivado 12-12493] Simulation top is 'project_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb3/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_tb3'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'project_tb' in fileset 'sim_tb3'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_tb3'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb3/behav/xsim'
+"xvhdl --incr --relax -prj project_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb3/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture projecttb of entity xil_defaultlib.project_tb
+Built simulation snapshot project_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_tb3/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "project_tb_behav -key {Behavioral:sim_tb3:Functional:project_tb} -tclbatch {project_tb.tcl} -view {C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/project_tb_behav1.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/project_tb_behav1.wcfg
+WARNING: Simulation object /project_tb/UUT/finite_state_machine/reset_all_regs was not found in the design.
+WARNING: Simulation object /project_tb/UUT/finite_state_machine/select_register was not found in the design.
+source project_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'project_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1568.027 ; gain = 47.113
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 58100 ns  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb3/imports/tbset_new/tb_3.vhd
+$finish called at time : 58100 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_tb3/imports/tbset_new/tb_3.vhd" Line 542
+launch_simulation -simset [get_filesets sim_6 ]
+Command: launch_simulation  -simset sim_6
+INFO: [Vivado 12-12493] Simulation top is 'project_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_6/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_6'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'project_tb' in fileset 'sim_6'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_6'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_6/behav/xsim'
+"xvhdl --incr --relax -prj project_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fsm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sources_1/new/project_reti_logiche.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'project_reti_logiche'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_6/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot project_tb_behav xil_defaultlib.project_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture two_bit_demux_arch of entity xil_defaultlib.two_bit_demux [two_bit_demux_default]
+Compiling architecture two_bit_sreg_arch of entity xil_defaultlib.two_bit_sreg [two_bit_sreg_default]
+Compiling architecture address_register_arch of entity xil_defaultlib.address_register [address_register_default]
+Compiling architecture output_register_arch of entity xil_defaultlib.output_register [output_register_default]
+Compiling architecture fsm_arch of entity xil_defaultlib.fsm [fsm_default]
+Compiling architecture project_reti_logiche_arch of entity xil_defaultlib.project_reti_logiche [project_reti_logiche_default]
+Compiling architecture projecttb of entity xil_defaultlib.project_tb
+Built simulation snapshot project_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.sim/sim_6/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "project_tb_behav -key {Behavioral:sim_6:Functional:project_tb} -tclbatch {project_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source project_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: [Wavedata 42-489] Can't add object "/project_tb/RAM" to the wave window because it has 524288 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'project_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1598.191 ; gain = 30.164
+run all
+Failure: Simulation Ended! TEST PASSATO (EXAMPLE)
+Time: 33900 ns  Iteration: 0  Process: /project_tb/testRoutine  File: C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_6/imports/tbset_new/tb_1.vhd
+$finish called at time : 33900 ns : File "C:/Users/edoar/Documents/GitHub/RL-PROJECT-2023/rl_project_2023/rl_project_2023.srcs/sim_6/imports/tbset_new/tb_1.vhd" Line 382

@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity fsm is
     port(
             clock, start, reset:  in std_logic;
-            mem_we, mem_en, done, reset_all_regs, select_register,  show_output_reg, rst_addr, set_addr, set_two_bit, set_output_regs: out std_logic
+            mem_we, mem_en, done, show_output_reg, rst_addr, set_addr, set_two_bit, set_output_regs: out std_logic
         );
 end fsm;
 
@@ -89,51 +89,35 @@ architecture fsm_arch of fsm is
         mem_we <= '0';
         mem_en <= '0';
         done <= '0';
-        reset_all_regs <= '0';
-        select_register <= '0';
         show_output_reg <= '0';
         rst_addr <= '0';
         set_addr <= '0';
-        set_two_bit <= '1';       
+        set_two_bit <= '0';       
         set_output_regs <= '0';
         
         case curr_state is
             when S_RESET =>
-                reset_all_regs <= '1';
+                set_two_bit <= '1';  
             when S_WAIT =>
-                reset_all_regs <= '0';
-                rst_addr <= '0';
-                done <= '0';
-                select_register<= '0';
-                show_output_reg <= '0';
+                set_two_bit <= '1';  
             when SELECT_OUTPUT_LINE =>
-                set_two_bit <= '1';
+                set_two_bit <= '1';  
             when TAKE_MEM_ADDR =>
-                select_register<= '1'; 
-                set_two_bit <= '0';
                 set_addr <= '1';
             when MEM =>
-                set_two_bit <= '0'; 
-                set_addr <= '0';
                 mem_en <= '1';             
             when WRITE_REGS =>
-                set_two_bit <= '0'; 
                 mem_en <= '1';
             when WRITE_REGS_2 =>
-                set_two_bit <= '0'; 
                 set_output_regs <= '1';
                 mem_en <= '1';
             when WRITE_REGS_3 =>
-                set_two_bit <= '0'; 
                 mem_en <= '1';
                 show_output_reg <= '1';    
             when S_DONE =>
                 rst_addr <= '1';
-                set_two_bit <= '1';
-                select_register <= '0';
-                show_output_reg <= '0';
                 done <= '1';
-                mem_en <= '0';
+                set_two_bit <= '1';  
         end case;
                      
         

@@ -57,11 +57,7 @@ end project_reti_logiche;
 architecture project_reti_logiche_arch of project_reti_logiche is
 
     -- Internal signals of the circuit
-    signal select_register : std_logic;
-    signal reset_all_regs : std_logic;
     signal rst_addr : std_logic;
-    signal input_address_sreg : std_logic;
-    signal input_two_bit_sreg : std_logic;
     signal out_two_bit_sreg : std_logic_vector(1 downto 0);
     signal z_0_input_reg : std_logic_vector(7 downto 0);
     signal z_1_input_reg : std_logic_vector(7 downto 0);
@@ -81,25 +77,13 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     component fsm is
         port(
             clock, start, reset:  in std_logic;
-            mem_we, mem_en, done, reset_all_regs, select_register,  show_output_reg, rst_addr, set_addr, set_two_bit, set_output_regs : out std_logic
+            mem_we, mem_en, done, show_output_reg, rst_addr, set_addr, set_two_bit, set_output_regs : out std_logic
         );
     end component;
     
     
     -- Definitions of all the components
         
-    
-    
-    
---    -- One bit demultiplexer, 1-bit input, 2 bit output, used to divide the input in output selection and memory address 
---    component one_bit_demux is
---        port(
---            input : in std_logic;
---            sel : in std_logic;
---            out_0 : out std_logic;
---            out_1 : out std_logic
---        );
---    end component;
     
     -- Two bit demultiplexer, 8-bit input, 9-bit output (8-bit data + 1-bit set signal), used to choose where to send memory data
     component two_bit_demux is
@@ -158,16 +142,7 @@ architecture project_reti_logiche_arch of project_reti_logiche is
 begin
 
     -- Mapping ports of external components
-      
-    
---    -- Demux to select where the input bit has to go
---    demux1 : one_bit_demux port map(
---        input => i_w,
---        sel => select_register,
---        out_0 => input_two_bit_sreg,
---        out_1 => input_address_sreg
---    );
-    
+         
     -- Demux to select in which output we want to set a new value
     demux2 : two_bit_demux port map(
         clock => i_clk,
@@ -256,9 +231,7 @@ begin
         mem_en => o_mem_en,
         done => o_done,
         show_output_reg => show_output,
-        reset_all_regs => reset_all_regs,
         rst_addr => rst_addr,
-        select_register => select_register,
         set_addr => set_addr_reg,
         set_two_bit => set_two_bit_reg,
         set_output_regs => set_output_regs

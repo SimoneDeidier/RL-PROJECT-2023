@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb10_complete_long_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb10_complete_long" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,456.001 ns"></ZoomEndTime>
+      <Cursor1Time time="350.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="215"></NameColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="32" />
+   <wvobject fp_name="/tb10_complete_long/tb_done" type="logic">
+      <obj_property name="ElementShortName">tb_done</obj_property>
+      <obj_property name="ObjectShortName">tb_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/mem_address" type="array">
+      <obj_property name="ElementShortName">mem_address[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_address[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/tb_rst" type="logic">
+      <obj_property name="ElementShortName">tb_rst</obj_property>
+      <obj_property name="ObjectShortName">tb_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/tb_start" type="logic">
+      <obj_property name="ElementShortName">tb_start</obj_property>
+      <obj_property name="ObjectShortName">tb_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/tb_clk" type="logic">
+      <obj_property name="ElementShortName">tb_clk</obj_property>
+      <obj_property name="ObjectShortName">tb_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/mem_o_data" type="array">
+      <obj_property name="ElementShortName">mem_o_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_o_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/mem_i_data" type="array">
+      <obj_property name="ElementShortName">mem_i_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_i_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/enable_wire" type="logic">
+      <obj_property name="ElementShortName">enable_wire</obj_property>
+      <obj_property name="ObjectShortName">enable_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/mem_we" type="logic">
+      <obj_property name="ElementShortName">mem_we</obj_property>
+      <obj_property name="ObjectShortName">mem_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/tb_z0" type="array">
+      <obj_property name="ElementShortName">tb_z0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/tb_z1" type="array">
+      <obj_property name="ElementShortName">tb_z1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/tb_z2" type="array">
+      <obj_property name="ElementShortName">tb_z2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/tb_z3" type="array">
+      <obj_property name="ElementShortName">tb_z3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/tb_w" type="logic">
+      <obj_property name="ElementShortName">tb_w</obj_property>
+      <obj_property name="ObjectShortName">tb_w</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/scenario_rst" type="array">
+      <obj_property name="ElementShortName">scenario_rst[0:364]</obj_property>
+      <obj_property name="ObjectShortName">scenario_rst[0:364]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/scenario_start" type="array">
+      <obj_property name="ElementShortName">scenario_start[0:364]</obj_property>
+      <obj_property name="ObjectShortName">scenario_start[0:364]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/scenario_w" type="array">
+      <obj_property name="ElementShortName">scenario_w[0:364]</obj_property>
+      <obj_property name="ObjectShortName">scenario_w[0:364]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/CLOCK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLOCK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLOCK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/SCENARIOLENGTH" type="other">
+      <obj_property name="ElementShortName">SCENARIOLENGTH</obj_property>
+      <obj_property name="ObjectShortName">SCENARIOLENGTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/mem_we" type="logic">
+      <obj_property name="ElementShortName">mem_we</obj_property>
+      <obj_property name="ObjectShortName">mem_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/mem_en" type="logic">
+      <obj_property name="ElementShortName">mem_en</obj_property>
+      <obj_property name="ObjectShortName">mem_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/show_output_reg" type="logic">
+      <obj_property name="ElementShortName">show_output_reg</obj_property>
+      <obj_property name="ObjectShortName">show_output_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/rst_addr" type="logic">
+      <obj_property name="ElementShortName">rst_addr</obj_property>
+      <obj_property name="ObjectShortName">rst_addr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/set_addr" type="logic">
+      <obj_property name="ElementShortName">set_addr</obj_property>
+      <obj_property name="ObjectShortName">set_addr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/set_two_bit" type="logic">
+      <obj_property name="ElementShortName">set_two_bit</obj_property>
+      <obj_property name="ObjectShortName">set_two_bit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/set_output_regs" type="logic">
+      <obj_property name="ElementShortName">set_output_regs</obj_property>
+      <obj_property name="ObjectShortName">set_output_regs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/curr_state" type="other">
+      <obj_property name="ElementShortName">curr_state</obj_property>
+      <obj_property name="ObjectShortName">curr_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb10_complete_long/UUT/finite_state_machine/counter_reset" type="logic">
+      <obj_property name="ElementShortName">counter_reset</obj_property>
+      <obj_property name="ObjectShortName">counter_reset</obj_property>
+   </wvobject>
+</wave_config>

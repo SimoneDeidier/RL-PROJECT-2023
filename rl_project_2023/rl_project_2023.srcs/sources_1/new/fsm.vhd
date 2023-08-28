@@ -40,7 +40,7 @@ end fsm;
 
 architecture fsm_arch of fsm is
 
-    type S is (S_RESET, S_WAIT, SELECT_OUTPUT_LINE, TAKE_MEM_ADDR, MEM, WRITE_REGS, WRITE_REGS_2, WRITE_REGS_3, S_DONE );
+    type S is (S_RESET, S_WAIT, SELECT_OUTPUT_LINE, TAKE_MEM_ADDR, MEM_REQ, MEM, SET_OUT_REGS, SHOW_OUTPUT, S_DONE );
     signal curr_state : S;
     signal counter_reset: std_logic;
     
@@ -57,7 +57,7 @@ architecture fsm_arch of fsm is
         elsif clock'event and clock = '1' then
             case curr_state is
                 when S_RESET =>
-                    curr_state <= S_WAIT;
+                    curr_state <= S_RESET;
                 when S_WAIT =>
                     if start='1' then
                         curr_state <= SELECT_OUTPUT_LINE;
@@ -66,15 +66,15 @@ architecture fsm_arch of fsm is
                     curr_state <= TAKE_MEM_ADDR;
                 when TAKE_MEM_ADDR =>
                     if start = '0' then 
-                        curr_state <= MEM;
+                        curr_state <= MEM_REQ;
                     end if;
+                when MEM_REQ =>
+                    curr_state <= MEM;
                 when MEM =>
-                    curr_state <= WRITE_REGS;
-                when WRITE_REGS =>
-                    curr_state <= WRITE_REGS_2;
-                when WRITE_REGS_2 =>
-                    curr_state <= WRITE_REGS_3;    
-                when WRITE_REGS_3 =>
+                    curr_state <= SET_OUT_REGS;
+                when SET_OUT_REGS =>
+                    curr_state <= SHOW_OUTPUT;    
+                when SHOW_OUTPUT =>
                     curr_state <= S_DONE;
                 when S_DONE =>                 
                     curr_state <= S_WAIT;
@@ -96,22 +96,21 @@ architecture fsm_arch of fsm is
         set_output_regs <= '0';
         
         case curr_state is
-            when S_RESET =>
-                set_two_bit <= '1';  
+            when S_RESET => 
             when S_WAIT =>
                 set_two_bit <= '1';  
             when SELECT_OUTPUT_LINE =>
                 set_two_bit <= '1';  
             when TAKE_MEM_ADDR =>
                 set_addr <= '1';
-            when MEM =>
+            when MEM_REQ =>
                 mem_en <= '1';             
-            when WRITE_REGS =>
+            when MEM =>
                 mem_en <= '1';
-            when WRITE_REGS_2 =>
+            when SET_OUT_REGS =>
                 set_output_regs <= '1';
                 mem_en <= '1';
-            when WRITE_REGS_3 =>
+            when SHOW_OUTPUT =>
                 mem_en <= '1';
                 show_output_reg <= '1';    
             when S_DONE =>

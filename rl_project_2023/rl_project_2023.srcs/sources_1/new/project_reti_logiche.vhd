@@ -69,7 +69,6 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     signal z_3_set_reg : std_logic;
     signal set_two_bit_reg : std_logic;
     signal set_addr_reg : std_logic;
-    signal shift_addr_reg : std_logic;
     signal show_output : std_logic;
     signal set_output_regs : std_logic;
     -- FSM states
@@ -119,7 +118,6 @@ architecture project_reti_logiche_arch of project_reti_logiche is
             set : in std_logic;
             reset : in std_logic;
             reset_addr : in std_logic;
-            shift : in std_logic;
             clock : in std_logic;
             start : in std_logic;
             output : out std_logic_vector(15 downto 0)
@@ -172,7 +170,6 @@ begin
         set => set_addr_reg,
         reset => i_rst,
         reset_addr => rst_addr,
-        shift => shift_addr_reg,
         clock => i_clk,
         output => o_mem_addr,
         start => i_start

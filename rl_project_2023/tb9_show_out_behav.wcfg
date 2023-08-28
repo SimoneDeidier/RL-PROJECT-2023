@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb9_show_out_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb9_show_out" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="206.180 ns"></ZoomStartTime>
+      <ZoomEndTime time="578.181 ns"></ZoomEndTime>
+      <Cursor1Time time="300.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="215"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/tb9_show_out/tb_done" type="logic">
+      <obj_property name="ElementShortName">tb_done</obj_property>
+      <obj_property name="ObjectShortName">tb_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/mem_address" type="array">
+      <obj_property name="ElementShortName">mem_address[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_address[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/tb_rst" type="logic">
+      <obj_property name="ElementShortName">tb_rst</obj_property>
+      <obj_property name="ObjectShortName">tb_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/tb_start" type="logic">
+      <obj_property name="ElementShortName">tb_start</obj_property>
+      <obj_property name="ObjectShortName">tb_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/tb_clk" type="logic">
+      <obj_property name="ElementShortName">tb_clk</obj_property>
+      <obj_property name="ObjectShortName">tb_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/mem_o_data" type="array">
+      <obj_property name="ElementShortName">mem_o_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_o_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/mem_i_data" type="array">
+      <obj_property name="ElementShortName">mem_i_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_i_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/enable_wire" type="logic">
+      <obj_property name="ElementShortName">enable_wire</obj_property>
+      <obj_property name="ObjectShortName">enable_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/mem_we" type="logic">
+      <obj_property name="ElementShortName">mem_we</obj_property>
+      <obj_property name="ObjectShortName">mem_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/tb_z0" type="array">
+      <obj_property name="ElementShortName">tb_z0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/tb_z1" type="array">
+      <obj_property name="ElementShortName">tb_z1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/tb_z2" type="array">
+      <obj_property name="ElementShortName">tb_z2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/tb_z3" type="array">
+      <obj_property name="ElementShortName">tb_z3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_z3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/tb_w" type="logic">
+      <obj_property name="ElementShortName">tb_w</obj_property>
+      <obj_property name="ObjectShortName">tb_w</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/scenario_rst" type="array">
+      <obj_property name="ElementShortName">scenario_rst[0:19]</obj_property>
+      <obj_property name="ObjectShortName">scenario_rst[0:19]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/scenario_start" type="array">
+      <obj_property name="ElementShortName">scenario_start[0:19]</obj_property>
+      <obj_property name="ObjectShortName">scenario_start[0:19]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/scenario_w" type="array">
+      <obj_property name="ElementShortName">scenario_w[0:19]</obj_property>
+      <obj_property name="ObjectShortName">scenario_w[0:19]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/CLOCK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLOCK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLOCK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/SCENARIOLENGTH" type="other">
+      <obj_property name="ElementShortName">SCENARIOLENGTH</obj_property>
+      <obj_property name="ObjectShortName">SCENARIOLENGTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb9_show_out/UUT/finite_state_machine/curr_state" type="other">
+      <obj_property name="ElementShortName">curr_state</obj_property>
+      <obj_property name="ObjectShortName">curr_state</obj_property>
+   </wvobject>
+</wave_config>

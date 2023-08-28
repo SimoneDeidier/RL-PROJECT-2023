@@ -40,7 +40,7 @@ end fsm;
 
 architecture fsm_arch of fsm is
 
-    type S is (S_RESET, S_WAIT, SELECT_OUTPUT_LINE, TAKE_MEM_ADDR, MEM_REQ, MEM, SET_OUT_REGS, SHOW_OUTPUT, S_DONE );
+    type S is (S_WAIT, SELECT_OUTPUT_LINE, TAKE_MEM_ADDR, MEM_REQ, MEM, SET_OUT_REGS, SHOW_OUTPUT, S_DONE );
     signal curr_state : S;
     signal counter_reset: std_logic;
     
@@ -56,8 +56,6 @@ architecture fsm_arch of fsm is
             curr_state <= S_WAIT;
         elsif clock'event and clock = '1' then
             case curr_state is
-                when S_RESET =>
-                    curr_state <= S_RESET;
                 when S_WAIT =>
                     if start='1' then
                         curr_state <= SELECT_OUTPUT_LINE;
@@ -96,7 +94,6 @@ architecture fsm_arch of fsm is
         set_output_regs <= '0';
         
         case curr_state is
-            when S_RESET => 
             when S_WAIT =>
                 set_two_bit <= '1';  
             when SELECT_OUTPUT_LINE =>

@@ -36,6 +36,7 @@ entity address_register is
             input : in std_logic;
             set : in std_logic;
             reset : in std_logic;
+            reset_addr : in std_logic;
             shift : in std:logic;
             clock : in std_logic;
             output : out std_logic_vector(15 downto 0)
@@ -48,9 +49,9 @@ architecture address_register_arch of address_register is
 
 begin
 
-    address_register_proc : process(input, set, reset, clock, shift)
+    address_register_proc : process(input, set, reset, clock, shift, reset_addr)
     begin
-        if reset = '1' then
+        if reset = '1' or reset_addr = '1' then
             data <= "0000000000000000";
             output <= data;
         elsif clock'event and clock = '1' and set = '1' then

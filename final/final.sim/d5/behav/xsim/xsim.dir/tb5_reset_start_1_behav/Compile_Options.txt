@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "tb5_reset_start_1_behav" "xil_defaultlib.tb5_reset_start_1" -log "elaborate.log" 

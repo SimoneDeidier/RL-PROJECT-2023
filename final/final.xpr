@@ -44,7 +44,7 @@
     <Option Name="SimulatorGccVersionActiveHdl" Val="9.3.0"/>
     <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="ActiveSimSet" Val="5"/>
+    <Option Name="ActiveSimSet" Val="d10"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
@@ -58,7 +58,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="30"/>
+    <Option Name="WTXSimLaunchSim" Val="48"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -133,6 +133,14 @@
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
       <Filter Type="Utils"/>
+      <File Path="$PSRCDIR/utils_1/imports/synth_1/project_reti_logiche.dcp">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedInSteps" Val="synth_1"/>
+          <Attr Name="AutoDcp" Val="1"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
@@ -169,6 +177,7 @@
       </Config>
     </FileSet>
     <FileSet Name="1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/1" RelGenDir="$PGENDIR/1">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/1/imports/tbset_new/tb_1.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Testbench/tbset_new/tb_1.vhd"/>
@@ -193,6 +202,7 @@
       </Config>
     </FileSet>
     <FileSet Name="2" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/2" RelGenDir="$PGENDIR/2">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/2/imports/tbset_new/tb_2.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Testbench/tbset_new/tb_2.vhd"/>
@@ -217,6 +227,7 @@
       </Config>
     </FileSet>
     <FileSet Name="3" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/3" RelGenDir="$PGENDIR/3">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/3/imports/tbset_new/tb_3.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Testbench/tbset_new/tb_3.vhd"/>
@@ -241,6 +252,7 @@
       </Config>
     </FileSet>
     <FileSet Name="4" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/4" RelGenDir="$PGENDIR/4">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/4/imports/tbset_new/tb_4.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Testbench/tbset_new/tb_4.vhd"/>
@@ -265,6 +277,7 @@
       </Config>
     </FileSet>
     <FileSet Name="5" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/5" RelGenDir="$PGENDIR/5">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/5/imports/tbset_new/tb_5.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Testbench/tbset_new/tb_5.vhd"/>
@@ -289,6 +302,7 @@
       </Config>
     </FileSet>
     <FileSet Name="6" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/6" RelGenDir="$PGENDIR/6">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/6/imports/tbset_new/tb_6.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Testbench/tbset_new/tb_6.vhd"/>
@@ -313,6 +327,7 @@
       </Config>
     </FileSet>
     <FileSet Name="7" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/7" RelGenDir="$PGENDIR/7">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/7/imports/tbset_new/tb_7.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Testbench/tbset_new/tb_7.vhd"/>
@@ -337,6 +352,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d1" RelGenDir="$PGENDIR/d1">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d1/imports/Testbench/tb1_empty_address.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../rl_project_2023/rl_project_2023.srcs/sim_d1/imports/Testbench/tb1_empty_address.vhd"/>
@@ -361,6 +377,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d2" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d2" RelGenDir="$PGENDIR/d2">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d2/imports/Testbench/tb2_full_address.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../rl_project_2023/rl_project_2023.srcs/sim_d2/imports/Testbench/tb2_full_address.vhd"/>
@@ -385,6 +402,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d3" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d3" RelGenDir="$PGENDIR/d3">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d3/imports/Downloads/tb3_all_outs.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/tb3_all_outs.vhd"/>
@@ -409,6 +427,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d4" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d4" RelGenDir="$PGENDIR/d4">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d4/imports/Downloads/tb4_all_outs_with_overwrite.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/tb4_all_outs_with_overwrite.vhd"/>
@@ -433,6 +452,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d5" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d5" RelGenDir="$PGENDIR/d5">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d5/imports/Downloads/tb5_reset_start_1.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/tb5_reset_start_1.vhd"/>
@@ -457,6 +477,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d6" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d6" RelGenDir="$PGENDIR/d6">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d6/imports/Downloads/tb6_reset_ask_mem.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/tb6_reset_ask_mem.vhd"/>
@@ -481,6 +502,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d7" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d7" RelGenDir="$PGENDIR/d7">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d7/imports/Downloads/tb7_reset_read_mem.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/tb7_reset_read_mem.vhd"/>
@@ -505,6 +527,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d8" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d8" RelGenDir="$PGENDIR/d8">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d8/imports/Downloads/tb8_save_out.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/tb8_save_out.vhd"/>
@@ -529,6 +552,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d9" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d9" RelGenDir="$PGENDIR/d9">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d9/imports/Downloads/tb9_show_out.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/tb9_show_out.vhd"/>
@@ -553,6 +577,7 @@
       </Config>
     </FileSet>
     <FileSet Name="d10" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/d10" RelGenDir="$PGENDIR/d10">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/d10/imports/Downloads/tb10_complete_long.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/tb10_complete_long.vhd"/>
@@ -596,7 +621,7 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="19">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a200tfbg484-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a200tfbg484-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/synth_1/project_reti_logiche.dcp" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>

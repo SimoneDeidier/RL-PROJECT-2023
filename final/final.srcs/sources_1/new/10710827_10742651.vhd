@@ -65,11 +65,10 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     --FSM
     type S is (S_WAIT, SELECT_OUTPUT_LINE, TAKE_MEM_ADDR, MEM_REQ, MEM, SET_OUT_REGS, S_SHOW_OUTPUT, S_DONE );
     signal curr_state : S;
-    signal counter_reset: std_logic;
     signal show_output, rst_addr, set_addr, set_two_bit, master_set: std_logic;
           
     
-    -- Two bit demultiplexer, 8-bit input, 9-bit output (8-bit data + 1-bit set signal), used to choose where to send memory data
+    -- Two bit demultiplexer, 9-bit output (8-bit data + 1-bit set signal), used to choose where to send memory data
     signal out_0 :  std_logic_vector(7 downto 0);
     signal out_1 :  std_logic_vector(7 downto 0);
     signal out_2 :  std_logic_vector(7 downto 0);
@@ -81,7 +80,6 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     
     -- Two bit shift register, used to store the output selection index
     signal out_two_bit_sreg : std_logic_vector(1 downto 0);
-    signal out_data_sreg : std_logic_vector(1 downto 0);
     
     -- 16 bit shift register, used to store the 16-bit memory address
     signal data : std_logic_vector(15 downto 0);
@@ -92,10 +90,6 @@ architecture project_reti_logiche_arch of project_reti_logiche is
     signal data_z2: std_logic_vector(7 downto 0);
     signal data_z3: std_logic_vector(7 downto 0);
         
-    
-    
-    
-
 begin
 
     demux_proc : process(i_mem_data, out_two_bit_sreg, i_clk)
@@ -149,10 +143,8 @@ begin
     begin
         if i_clk'event and i_clk = '1' then
             if set_two_bit = '1' then
-                out_data_sreg(1) <= out_data_sreg(0);
-                out_data_sreg(0) <= i_w; 
-            else
-                out_two_bit_sreg <= out_data_sreg; 
+                out_two_bit_sreg(1) <= out_two_bit_sreg(0);
+                out_two_bit_sreg(0) <= i_w; 
             end if;    
         end if;
         

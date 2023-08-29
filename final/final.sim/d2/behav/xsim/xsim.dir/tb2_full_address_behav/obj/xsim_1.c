@@ -75,8 +75,8 @@ const int NumRelocateId= 15;
 void relocate(char *dp)
 {
 	iki_relocate(dp, "xsim.dir/tb2_full_address_behav/xsim.reloc",  (void **)funcTab, 15);
-	iki_vhdl_file_variable_register(dp + 1059720);
-	iki_vhdl_file_variable_register(dp + 1059776);
+	iki_vhdl_file_variable_register(dp + 1059304);
+	iki_vhdl_file_variable_register(dp + 1059360);
 
 
 	/*Populate the transaction function pointer field in the whole net structure */

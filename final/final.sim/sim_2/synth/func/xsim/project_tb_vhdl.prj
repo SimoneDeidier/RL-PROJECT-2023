@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"project_tb_func_synth.vhd" \
+"../../../../../final.srcs/sim_2/imports/Downloads/tb_example23_agg.vhd" \
+
+# Do not sort compile order
+nosort

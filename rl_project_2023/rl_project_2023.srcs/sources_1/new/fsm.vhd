@@ -119,7 +119,4 @@ architecture fsm_arch of fsm is
         
     end process;
     
-    
-    
-
 end fsm_arch;

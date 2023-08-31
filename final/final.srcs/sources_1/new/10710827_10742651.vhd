@@ -253,7 +253,7 @@ begin
     end process;
 
     --FSM process
-    fsm : process(i_clk, i_rst)
+    fsm : process(i_clk, i_rst, i_start)
     
     begin
         if i_rst = '1' then

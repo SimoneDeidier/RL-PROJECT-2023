@@ -1,0 +1,505 @@
+\pagebreak
+
+\hypertarget{reti-logiche---documentazione-prova-finale}{%
+\section{Reti Logiche - Documentazione Prova
+Finale}\label{reti-logiche---documentazione-prova-finale}}
+
+Documentazione relativa al progetto finale del corso ``\textbf{Reti
+Logiche}'', professore Fornaciari William.
+
+Studenti \href{https://github.com/EdoardoDAlessio}{D'Alessio Edoardo}
+(\emph{codice persona 10710827}) e
+\href{https://github.com/SimoneDeidier}{Deidier Simone} (\emph{codice
+persona 10742651}).\newline\newline\newline
+
+\emph{Anno Accademico 2022/2023}
+
+\pagebreak
+
+\hypertarget{introduzione}{%
+\subsection{Introduzione}\label{introduzione}}
+
+\hypertarget{specifica}{%
+\subsubsection{Specifica}\label{specifica}}
+
+Il tema della Prova Finale consiste nell'ideazione, realizzazione
+mediante linguaggio VHDL e relativo testing di un sistema di inoltro
+dati provenienti da una memoria esterna verso una delle possibili
+quattro uscite. I dati in uscita devono essere persistenti nel tempo e
+devono cambiare solamente in caso di riscrittura. Più precisamente, il
+componente riceve indicazioni circa una locazione di memoria ed il
+canale di output da utilizzare mediante un ingresso seriale da un bit,
+mentre le uscite del sistema forniscono tutti i bit della parola di
+memoria in parallelo.
+
+Il componente da sintetizzare presenta le seguenti porte per
+interfacciarsi con il circuito ed i sistemi esterni:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{CLOCK} (\texttt{i\_clk}) è il segnale di clock in ingresso.
+\item
+  \textbf{W} (\texttt{i\_w}) è il segnale di input dati; esso comprende
+  due bit relativi all'uscita verso la quale indirizzare il dato di
+  memoria
+  (\(2\;\text{bit}\implies2^2=4\;\text{valori}\implies Z_0,Z_1,Z_2,Z_3\)),
+  ed un numero \(0\leq x\leq 16\) di bit relativi all'indirizzo di
+  memoria stesso. \emph{La memoria accetta solamente indirizzi 16 bit,
+  pertanto il valore letto in input viene esteso con un numero di bit a
+  0 tali per renderlo della dimensione desiderata}.
+\item
+  \textbf{START} (\texttt{i\_start}) è il segnale di in ingresso che,
+  fintatntoché vale 1, segnala al componente di leggere il bit sulla
+  linea \emph{W}. Il segnale è sicuramente attivo almeno per 2 cicli di
+  clock (\emph{lettura dell'uscita sulla quale visualizzare il valore in
+  output}) e per un massimo di 18 (\emph{2 cicli + 16 per la lettura
+  dell'indirizzo di memoria}).
+\item
+  \textbf{RESET} (\texttt{i\_rst}) è il segnale che inizializza la
+  macchina per ricevere il primo segnale di \emph{START}.
+\item
+  \textbf{Z\_0, Z\_1, Z\_2, Z\_3}
+  (\texttt{o\_z0,\ o\_z1,\ o\_z2,\ o\_z3}) sono i quattro canali di
+  output, ognuno da 8 bit ciascuno (\emph{i valori di output della
+  memoria a cui il componente si interfaccia sono sempre di dimensione 8
+  bit}).
+\item
+  \textbf{DONE} (\texttt{o\_done}) è il segnale di output che comunica
+  la fine dell'elaborazione, esso \emph{assume il valore 1 nel ciclo di
+  clock in cui il componente mostra i valori aggiornati su tutte e
+  quattro le uscite}).
+\item
+  \textbf{MEMORY ADDRESS} è il segnale di output da 16 bit che manda
+  l'indirizzo alla memoria.
+\item
+  \textbf{MEMORY DATA} è il segnale da 8 bit proveniente dalla memoria
+  in seguito ad una richiesta di lettura.
+\end{itemize}
+
+\pagebreak
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{MEMORY ENABLE} (\texttt{o\_mem\_en}) è il segnale di
+  \emph{ENABLE} da dover mandare alla memoria per poter comunicare sia
+  in lettura che in scrittura.
+\item
+  \textbf{MEMORY WRITE ENABLE} (\texttt{o\_mem\_we}) è il segnale di
+  \emph{WRITE ENABLE}; è necessario che questo segnale valga \emph{1}
+  per poter scrivere in memoria, mentre per leggere esso deve essere
+  \emph{0}.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{../../../../_resources/Screenshot 2023-08-27 alle 14.41.18.png}
+\caption{\emph{Interfaccia del componente descritta in VHDL.}}
+\end{figure}
+
+\pagebreak
+
+\hypertarget{esempio-di-funzionamento}{%
+\subsubsection{Esempio di
+funzionamento}\label{esempio-di-funzionamento}}
+
+\begin{figure}
+\centering
+\includegraphics{../../../../_resources/Screenshot 2023-08-27 alle 14.42.05.png}
+\caption{\emph{Esempio di funzionamento del componente da progettare.}}
+\end{figure}
+
+Nell'esempio il segnale di \emph{START} vale \emph{1} per 7 cicli di
+clock: durante il primo ed il secondo ciclo di clock il componente legge
+il valore del segnale input \emph{W} che andrà ad indicare su quale
+uscita mostrare l'output
+(\(\text{INPUT}=(01)_2\implies(1)_{10}\implies Z_1\)); durante i
+successivi cinque cicli di clock in cui il segnale \emph{START} rimane
+ad \emph{1}, il componente legge il valore di \emph{W}, il quale questa
+volta indica l'indirizzo di memoria da cui andare a leggere il dato da
+mostrare in output (\emph{il componente legge solamente 5 bit di
+indirizzo, ovvero \((10110)_2\), ma alla memoria andrà a richiedere il
+valore all'indirizzo \((0000000000010110)_2\), estendendo con tutti 0 il
+valore letto in input per formare un indirizzo da 16 bit}). Il
+componente interrogherà la memoria esterna richiedendo il valore (\(D\))
+presente all'indirizzo specificato dal'input e, una volta che la memoria
+ha correttamente comunicato l'indirizzo al componente, esso lo mostra
+sull'output indicato ad inizio sequenza. Il valore \(D\) viene mostrato
+in output per un solo ciclo di clock, dopodiché l'uscita torna a
+mostrare \emph{0} come valore; inoltre, nello stesso ciclo di clock, il
+segnale \emph{DONE} vale \emph{1}, e tutte le altre uscite
+(\(Z_0,\,Z_2,\,Z_3\)) mostrano l'ultimo valore \(D_\text{old}\) che
+hanno mostrato in output precedentemente (\emph{in questo esempio
+mostrano tutti 0, si suppone che la sequenza sia avvenuta dopo aver dato
+il segnale RESET al componente}).
+
+\pagebreak
+
+\hypertarget{architettura}{%
+\subsection{Architettura}\label{architettura}}
+
+\begin{figure}
+\centering
+\includegraphics{../../../../_resources/Screenshot 2023-08-31 alle 18.14.14.png}
+\caption{\emph{Datapath del componente progettato.}}
+\end{figure}
+
+La figura mostra il \emph{datapath} intero del componente da noi
+progettato (\emph{memoria esclusa, il componente è tutto ciò che sta
+all'interno della linea tratteggiata grigia}) che rispetta le specifiche
+richieste. Di segutio i componenti verranno analizzati più nel
+dettaglio.
+
+\hypertarget{fsm}{%
+\subsubsection{\texorpdfstring{\emph{FSM}}{FSM}}\label{fsm}}
+
+Questo componente implementa la \emph{macchina a stati finiti} che
+abbiamo ideato per regolare la maggior parte dei segnali interni al
+componente; essa presenta i seguenti stati:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{S\_WAIT}, stato iniziale di \emph{wait} in cui la macchina
+  aspetta l'inizio delle operazioni (\emph{ovvero il segnale}
+  \texttt{start\ =\ 1}). Il comando \emph{reset} (\texttt{reset\ =\ 1})
+  permette una corretta inizializzazione di tutti i registri ed i
+  componenti. Una volta che arriva il segnale di \emph{start}, la
+  macchina effettua la transizione verso lo stato
+  \emph{SELECT\_OUTPUT\_LINE}.
+\end{itemize}
+
+\pagebreak
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{SELECT\_OUTPUT\_LINE}, stato in cui la macchina acquisisce il
+  dato che indica su quale tra le quattro uscite visualizzare il nuovo
+  valore richiesto dalla memoria; lo stato dura \emph{un solo ciclo di
+  clock}, una volta terminato la macchina transisce verso lo stato
+  \emph{TAKE\_MEM\_ADDR} (\emph{il perché della durata di un solo ciclo
+  di clock per leggere due bit viene spiegato più approfonditamente
+  nella sezione ``\textbf{Registri a scorrimento}''}).
+\item
+  \textbf{TAKE\_MEM\_ADDR}, stato in cui la macchina acquisisce i bit
+  relativi all'indirizzo di memoria. Fintantoché il bit di \emph{start}
+  vale \emph{1} la macchina rimane in questo stato, appena il bit
+  \emph{start} vale \emph{0} avviene la transizione verso lo stato
+  \emph{MEM\_REQ}.
+\item
+  \textbf{MEM\_REQ}, stato della durata di un singolo ciclo di clock nel
+  quale la \emph{FSM} invia i dati alla memoria (\texttt{mem\_en\ =\ 1}
+  \emph{ed il valore dell'indirizzo di memoria}). Lo stato successivo è
+  \emph{MEM}.
+\item
+  \textbf{MEM}, stato della durata di un ciclo di clock nel quale la
+  memoria accede all'indirizzo indicato dallo stato precedente. Alla
+  fine di questo stato il valore del segnale \emph{mem\_data}
+  proveniente dalla memoria conterrà il valore \(D\) di memoria
+  all'indirizzo comunicato. Lo stato successivo è \emph{SET\_OUT\_REGS}.
+\item
+  \textbf{SET\_OUT\_REGS}, stato della durata di un ciclo di clock nel
+  quale la \emph{FSM} invia ai registri di output il comando
+  \emph{set\_output\_regs}, comando \textbf{master set} (\emph{descirtto
+  più nel dettaglio nella sezione ``\textbf{Registri di output}''}).
+  Durante questo stato il registro selezionato (\emph{stato
+  SELECT\_OUTPUT\_LINE}) assume come valore il valore \(D\) proveniente
+  dalla memoria (\emph{segnale mem\_data}). Lo stato successivo è
+  \emph{SHOW\_OUTPUT}.
+\item
+  \textbf{SHOW\_OUTPUT}, stato della durata di un ciclo di clock nel
+  quale la \emph{FSM} imposta il segnale \emph{show\_output} ad \emph{1}
+  (\emph{descirtto più nel dettaglio nella sezione ``\textbf{Registri di
+  output}''}), segnale che permette a tutti i registri di comunicare in
+  output il valore da loro salvato. Lo stato successivo è
+  \emph{S\_DONE}.
+\item
+  \textbf{S\_DONE}, stato della durata di un ciclo di clock nel quale la
+  \emph{FSM} imposta il segnale \emph{done} ad \emph{1}. In questo ciclo
+  di clock ogni uscita output, \(Z_0,\,Z_1,\,Z_2,\,Z_3,\) mostra il
+  valore salvato nei registri ed il segnale \emph{o\_done} vale
+  \emph{1}. A fine del ciclo la \emph{FSM} manda il segnale di
+  \emph{reset} al registro da 16 bit per l'indirizzo di memoria, e
+  ritorna allo stato \emph{S\_WAIT}.
+\end{itemize}
+
+\pagebreak
+
+\begin{figure}
+\centering
+\includegraphics{../../../../_resources/Screenshot 2023-08-28 alle 16.47.33.jpg}
+\caption{\emph{Diagramma degli stati della FSM.}}
+\end{figure}
+
+\pagebreak
+
+\hypertarget{registri-a-scorrimento}{%
+\subsubsection{Registri a scorrimento}\label{registri-a-scorrimento}}
+
+Abbiamo utilizzato dei registri a scorrimento a sinistra (\emph{left
+shift register}) per salvare le informazioni sia della scelta
+dell'output, sia l'indirizzo di memoria; questa scelta si è rivelata
+estremamente efficace dato che l'input viene dato serialmente un bit
+alla volta, infatti utilizzare registri non a scorrimento avrebbe
+implicato l'utilizzo di contatori accessori o di ulteriori accorgimenti
+a nostro parere meno efficaci di un registro a scorrimento. Per quanto
+riguarda il registro a scorrimento da 2 bit, esso salva nella posizione
+dell'\emph{LSB} il valore in input (\emph{segnale W}) dopo aver
+effettuato uno shift verso sinistra; questo accade solamente nello stato
+\emph{SELECT\_OUTPUT\_LINE} dive il segnale di \emph{set}, ovvero
+\emph{set\_two\_bit} vale \emph{1}. Dato che la \emph{FSM} impiega un
+ciclo di clock per la transizione di stato, il segnale \emph{set} vale
+\emph{1} anche nello stato \emph{S\_WAIT}, in modo tale che, appena il
+segale \emph{start} vale \emph{1}, il primo bit del segnale \emph{W}
+viene automaticamente letto e quindi è necessario una sola lettura
+successiva per aver letto correttamente i due bit di scelta dell'output.
+Per quanto riguarda il registro da 16 bit, il funzionamento è
+essenzialmente identico al registro da 2 bit, ma con un accorgimento
+fondamentale: all'inizio di ogni operazione, con il comando \emph{reset}
+e \emph{rst\_addr}, il registro viene impostato con valore
+``\(0000000000000000\)''; questo è estremamente comodo perché, essendo
+un registro a scorrimento verso sinistra, se i bit inseriti per
+l'indirizzo sono minori di 16, automaticamente il valore è esteso con
+tutti \emph{0} come da specifica, senza dover effettuare ulteriori
+operazioni. Etrambi i registri sono temporizzati in base al
+\emph{clock}, ed anche il registro da 16 bit possiede un segnale di
+\emph{set} chiamato \emph{set\_addr} che viene governato dalla
+\emph{FSM} (\emph{impostato ad 1 nello stato TAKE\_MEM\_ADDR}); inoltre
+il registro da 16 bit salva i valori in input solo se l'espressione
+\(\text{SET\_ADDR}\land\text{START}\) risulta \emph{true}.
+
+\hypertarget{demux}{%
+\subsubsection{\texorpdfstring{\emph{DeMux}}{DeMux}}\label{demux}}
+
+Il DeMultiplexer che abbiamo deciso di utilizzare nel nostro circuito ha
+il compito di prendere in input il valore \(D\), che la memoria
+restituisce dopo la richiesta da parte del componente, e di indirizzarlo
+al \emph{registro di output} corretto in base all'uscita precedentemente
+selezionata dall'input del sistema. Il segnale di input è quindi
+\emph{mem\_data}, mentre il segnale di select del \emph{DeMux} è il
+valore in memoria nel registro a 2 bit, ovvero
+\emph{out\_two\_bit\_sreg}. La particolarità di questo componente è
+l'output, infatti il segnale \emph{mem\_data} in input al \emph{DeMux} è
+un segnale da 8 bit (\(D\)), invece ognuno dei quattro segnali di output
+del \emph{DeMux}, ovvero i segnali \emph{input\_z\_x}, sono \textbf{9
+bit}; abbiamo deciso infatti di aggiungere, oltre agli 8 bit del valore
+di input, un segnale di \textbf{\emph{slave set}} che arrivi
+direttamente al registro di output intreressato assieme al dato di
+memoria da salvare. Questa scelta si è rivelata estremamente efficace
+risparmiando informazioni da mandare alla \emph{FSM} (\emph{descirtto
+più nel dettaglio nella sezione ``\textbf{Registri di output}''}).
+
+\pagebreak
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{esempio-di-funzionamento-demux}{%
+\paragraph{\texorpdfstring{\emph{Esempio di funzionamento
+DeMux}}{Esempio di funzionamento DeMux}}\label{esempio-di-funzionamento-demux}}
+
+\emph{Supponendo il segnale di memoria \(D=(10100011)_2\) ed il segnale
+di select del DeMux \(\text{out\_two\_bit\_sreg}=(01)_2\), il componente
+manderà in output i seguenti valori:}
+
+\[
+\begin{cases}\text{out\_0}=(0)_2\\
+\text{out\_1}=(10100011)_2\\
+\text{out\_2}=(0)_2\\
+\text{out\_3}=(0)_2\\
+\text{set\_0}=(0)_2\\
+\text{set\_1}=(1)_2\\
+\text{set\_2}=(0)_2\\
+\text{set\_3}=(0)_2\end{cases}
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{registri-di-output}{%
+\subsubsection{Registri di output}\label{registri-di-output}}
+
+Per permettere al nostro componente di mantenere in memoria per ogni
+uscita l'ultimo valore \(D_\text{old}\) di memoria, abbiamo deciso di
+implementare un \emph{registro di output} per ognuna delle quattro
+uscite presenti. Questi sono registri da 8 bit non a scorrimento, che
+presentano degli accorgimenti interessanti:
+
+\begin{itemize}
+\tightlist
+\item
+  Ogni registro presenta \emph{de segnali di set}, uno singolo per ogni
+  registro che proviene dal \emph{DeMux}, chiamato anche
+  \textbf{\emph{slave set}}, precedentemente descritto, mentre l'altro è
+  in comune tra tutti i registri e proviene direttamente dalla
+  \emph{FSM}, detto anche \textbf{\emph{master set}}. Un registro
+  sovrascrive il dato in memoria con quello in ingresso
+  \(\iff\text{SET}_\text{master}\land\text{SET}_\text{slave}=1\). Questa
+  scelta di progettazione è risultata estremamente efficace perché ci ha
+  permesso di poter scandire il momento del \emph{set} dei registri
+  tramite \emph{FSM}, senza dover però far sapere alla \emph{FSM} a
+  quale registro precisamente inviare il segnale di set.
+\item
+  Ogni registro presenta un segnale \emph{show\_output} regolato dalla
+  \emph{FSM} ed in comune tra tutti i registri; questo segnale ci
+  permette di scandire tramite \emph{FSM} il momento in cui i registri
+  devono effettivamente mostrare in output il valore da loro salvato
+  (\emph{ovvero nel ciclo di clock quando il segnale DONE vale 1}),
+  mentre in tutti gli altri stati i registri porteranno in output un
+  vettore da 8 bit di zeri, come richiesto da specifica.
+\end{itemize}
+
+Anche i \emph{registri di output} presentano una funzione di
+\emph{reset} che azzera completamente il loro valore in memoria quando
+l'omonimo comando viene inviato dalla \emph{FSM}.
+
+\pagebreak
+
+\hypertarget{risultati-sperimentali}{%
+\subsection{Risultati sperimentali}\label{risultati-sperimentali}}
+
+\hypertarget{sintesi}{%
+\subsubsection{Sintesi}\label{sintesi}}
+
+Il componente da noi ideato e descritto tramite linguaggio \emph{VHDL} è
+risultato completamete e correttamente sintetizzabile. La sintesi ci ha
+permesso inoltre di poter valutare alcuni aspetti cruciali del progetto
+e del nostro componente, infatti, grazie al \emph{report sull'utilizzo},
+abbiamo potuto appurare che il nostro componente utilizza solamente
+\emph{registri flip-flop}, portando a zero il numero di \emph{registri
+latch} utilizzati.
+
+\begin{figure}
+\centering
+\includegraphics{../../../../_resources/Screenshot 2023-08-31 alle 12.42.29.png}
+\caption{\emph{Parte del report di utilizzo di Vivado, come si può
+notare i ``Register as Latch'' sono 0.}}
+\end{figure}
+
+Un altro elemento cruciale da verificare post sintesi è il
+\emph{constraint} di tempo del clock, ovvero i ritardi che ogni porta e
+componente logico apportano al sistema. Dal \emph{report sui tempi}
+abbiamo potuto controllare che il \emph{constraint} di clock da
+\emph{100 ns} è ampiamente soddisfatto, con uno \emph{\textbf{Slack}
+pari a \textbf{97 ns}}.
+
+\pagebreak
+
+\begin{figure}
+\centering
+\includegraphics{../../../../_resources/Screenshot 2023-08-31 alle 16.46.56.png}
+\caption{\emph{Calcolo dello Slack effettuato da Vivado in fase post
+sintesi.}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{../../../../_resources/Screenshot 2023-08-31 alle 12.44.05.png}
+\caption{\emph{Dal report di Vivado abbiamo potuto anche apprendere il
+delay imposto dal nostro datapath: 2.387 ns.}}
+\end{figure}
+
+\hypertarget{simulazioni}{%
+\subsubsection{Simulazioni}\label{simulazioni}}
+
+Oltre alla corretta sintetizzazione del circuito, un altro degli
+elementi fondamentali era la correttezza del componente. Per fare ciò ci
+siamo appoggiati all'utilizzo di \emph{testbench}, ovvero codici
+\emph{VHDL} che permettono di dare input ad un sistema o componente e
+verificarne il corretto funzionamento tramite \emph{asserzioni} su
+valori di segnali, registri o stati della \emph{FSM}. Dato che il
+componente è stato completamente ideato da noi, abbiamo potuto applicare
+alcune delle regole base del \textbf{\emph{white-box testing}}, andando
+ad individuare la maggior parte dei casi e stati critici in cui il
+nostro componente si può trovare; un rapido elenco dei casi testati:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{test di indirizzo vuoto}, abbiamo voluto testare il caso in cui
+  il segnale \emph{start} rimane attivo per il minimo della sua durata
+  (\emph{2 cicli di clock per l'uscita}), controllando così che il
+  registro di memoria fosse correttamente inizializzato al valore
+  \emph{0}.
+\item
+  \emph{test di indirizzo pieno}, contrariamente al test precedente,
+  abbiamo voluto testare il caso in cui il segnale \emph{start} rimane
+  attivo per il massimo possibile (\emph{18 cicli di clock, due per
+  l'uscita, sedici per l'indirizzo}), dando un indirizzo casuale
+  \(i\geq2^{15}=32768\), controllando che il \emph{MSB} dell'indirizzo
+  fosse sempre \emph{1} e che il resto dei bit salvati nel registro
+  fossero corretti.
+\item
+  \emph{test di massimo indirizzo}, a seguito del test precedente
+  abbiamo voluto testare il caso in cui l'indirizzo di memoria sia
+  \((1111111111111111)_2=2^{16}-1=(65535)_{10}\), controllando il
+  corretto funzionamento del registro a scorrimento da 16 bit
+  inizializzato a \emph{0}.
+\end{itemize}
+
+\pagebreak
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{test di tutte le uscite}, abbiamo voluto testare una situazione
+  in cui vengano dati quattro diversi indirizzi di memoria, ognuno
+  assegnato ad una uscita diversa, controllando così il funzionamento
+  generale del componente; abbiamo potuto controllare il corretto
+  funzionamento dell'estensione a \emph{0} degli indirizzi non 16 bit,
+  il funzionamento dei \emph{registri di output} che permettono di
+  visualizzare sempre lo stesso valore \(D_\text{old}\) se non
+  sovrascritti, ed il funzionamento del \emph{DeMux} per selezionare le
+  quattro diverse uscite.
+\item
+  \emph{test di overwrite delle uscite}, dopo il test precedente abbiamo
+  voluto controllare il funzionamento della sovrascrittura dei dati nei
+  \emph{registri di output}, abbiamo così modificato la \emph{testbench}
+  affinché vengano dati otto diversi indirizzi di memoria che vengono
+  divisi equamente tra le quattro uscite, controllando che i dati in
+  output alla fine di ogni operazione siano sempre corretti, anche dopo
+  un \emph{overwrite} di dati di un \emph{registro di output}.
+\item
+  \emph{test generali sul comando reset}, abbiamo voluto controllare che
+  il comando \emph{reset}, comando che in qualsiasi momento e stato il
+  componente si trovi deve riportare tutto allo stato iniziale,
+  funzionasse correttamente; per fare ciò abbiamo creato una
+  \emph{testbench} che azionava il segnale \emph{reset} in momenti
+  diversi: ad inizio test, dopo il segnale di \emph{start}, dopo che la
+  memoria abbia comunicato il valore \(D\), dopo che il componente abbia
+  salvato nel \emph{registro di output} il valore \(D\) da memoria, dopo
+  che il componente abbia visualizzato sull'uscita il valore \(D\)
+  salvato nel \emph{registro di output}. In ognuno di questi casi la
+  \emph{testbench} dopo aver dato il segnale di \emph{reset} controllava
+  che la \emph{FSM} si trovasse sempre nello stato \emph{S\_WAIT}, che
+  ogni registro fosse reinizializzato a \emph{0}, e che ogni componente
+  fosse pronto per ripartire con le operazioni nel modo corretto.
+\end{itemize}
+
+\pagebreak
+
+\hypertarget{conclusioni}{%
+\subsection{Conclusioni}\label{conclusioni}}
+
+Ci riteniamo soddisfatti riguardo il componente da noi ideato,
+sviluppato e testato. Siamo consapevoli che grazie alle conoscenze
+apprese nel corso di \emph{Reti Logiche} siamo partiti da una buona idea
+di circuito iniziale che, durante lo sviluppo, abbiamo modellato e
+migliorato rendendolo sempre più efficace. La quantità di test e
+simulazioni che sono state fatte ci permettono di essere consapevoli di
+aver fatto un componente funzionante (\emph{anche nei casi limite}) e
+che rispetti con grande margine tutti i \emph{constraint} che sono stati
+imposti dalla specifica.
+
+Questo progetto ci ha permesso di avere una visione molto dettagliata
+della programmazione hardware, partendo dall'ideazione di un circuito e
+dalla scelta dei componenti che si possono utilizzare, per poi arrivare
+alla descrizione tramite linguaggio \emph{VHDL}, linguaggio
+completamente nuovo per noi che nel corso di questo progetto abbiamo
+saputo imparare ed apprezzare, così come il software \emph{Vivado}, che
+ci ha permesso soprattutto di visualizzare graficamente ciò che accadeva
+al nostro componente, aiutandoci moltissimo nella ricerca ed
+individuazione dei bachi e delle criticità. La parte di ideazione e
+stesura dei test ci ha molto messo alla prova, ma allo stesso tempo ci
+ha consapevolizzato dell'importanza di questi ultimi per avere un
+componente affidabile e funzionante.
